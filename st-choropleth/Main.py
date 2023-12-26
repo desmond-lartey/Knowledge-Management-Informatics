@@ -15,7 +15,7 @@ st.markdown("""
 
 # Define your columns
 #col2, col3, col4 = st.columns(3)
-col1  = st.columns(1)
+col1  = st.columns[1]
 
 # Adjust the width of the images as needed
 image_width = 600  # Example width, you can adjust this
