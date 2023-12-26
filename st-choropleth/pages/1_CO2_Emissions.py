@@ -9,13 +9,13 @@ st.title("CO2 Emissions")
 st.write("""The following map displays the CO2 emissions for a
             range of countries over a range of time""")
 
-st.info("""This an example of simple outline maps in Plotly, for
-different parts of the World
-""")
+#st.info("""This an example of simple outline maps in Plotly, for
+#different parts of the World
+#""")
 
 col1, col2 = st.columns(2)
 
-df_total = pd.read_csv('data/co2_total.csv')
+df_total = pd.read_csv("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/co2_total.csv")
 df_total_2021 = df_total[df_total['Year']==2021]
 col = 'Annual CO₂ emissions'
 max = df_total_2021[col].max()

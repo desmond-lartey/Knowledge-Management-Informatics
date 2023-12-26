@@ -8,12 +8,12 @@ st.set_page_config(layout="wide")
 st.title("Population of Australian States")
 st.info("Hover over the map to see the names of the states and their population")
 
-f = open('geo/australia.geojson')
+f = open("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/geo/australia.geojson")
 oz = json.load(f)
 #oz["features"][1]
 
 
-df = pd.read_csv('data/Australian Bureau of Statistics.csv')
+df = pd.read_csv("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/Australian Bureau of Statistics.csv")
 
 col1, col2 = st.columns(2)
 
