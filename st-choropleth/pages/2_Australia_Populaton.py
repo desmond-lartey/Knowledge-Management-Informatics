@@ -26,7 +26,7 @@ else:
 #oz["features"][1]
 
 
-df = pd.read_csv("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/Australian Bureau of Statistics.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/AustralianBureauofStatistics.csv")
 
 col1, col2 = st.columns(2)
 
