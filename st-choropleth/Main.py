@@ -12,9 +12,10 @@ st.markdown("""
 ---
 """)
 
+# Define your columns
 col2, col3, col4 = st.columns(3)
 
-# Ensure that the image paths are correct and relative to your Streamlit application's root directory
-col2.image("images/a.png")
-col3.image("images/b.png")
-col4.image("images/c.png")
+# Use the raw GitHub URLs for the images
+col2.image("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/images/a.png")
+col3.image("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/images/b.png")
+col4.image("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/images/c.png")
