@@ -11,27 +11,22 @@ st.markdown("""
 ---
 """)
 
+import streamlit as st
 import os
 
-# Absolute path to your images directory on your local machine
-# Make sure to use double backslashes on Windows or raw string literals
 images_dir = r"C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images"
-
-# Image filenames
 image_files = ["a.png", "b.png", "c.png"]
 
-# Create columns for the images
-cols = st.columns(3)
+# Display current working directory
+st.write('Current working directory:', os.getcwd())
 
-# Display each image in a separate column
-for i, filename in enumerate(image_files):
-    # Construct the full path to the image
+# Check and display whether each image file exists
+for filename in image_files:
     image_path = os.path.join(images_dir, filename)
-
-    # Check if the image exists
     if os.path.isfile(image_path):
-        # Display the image
-        cols[i].image(image_path)
+        st.image(image_path)
     else:
-        # Show a message if the image is not found
-        cols[i].error(f"Image {filename} not found at {image_path}")
+        st.error(f"Image {filename} not found at {image_path}")
+        # If the file isn't found, list the contents of the directory for debugging
+        st.write(f"Contents of {images_dir}:")
+        st.write(os.listdir(images_dir))
