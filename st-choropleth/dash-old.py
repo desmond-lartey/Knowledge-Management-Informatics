@@ -4,8 +4,8 @@ import plotly.express as px
 
 st.set_page_config(layout="wide")
 
-df_w = pd.read_csv('data/co2_total_world.csv')
-df_total = pd.read_csv('data/co2_total.csv')
+df_w = pd.read_csv('https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/co2_total_world.csv')
+df_total = pd.read_csv('https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/co2_total.csv')
 
 if 'year' not in st.session_state:
     st.session_state['year'] = 2021
