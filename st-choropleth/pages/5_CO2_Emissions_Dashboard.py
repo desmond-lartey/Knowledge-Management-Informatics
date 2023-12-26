@@ -12,9 +12,9 @@ st.set_page_config(layout="wide")
 # the data is local but it might better to cache it
 @st.cache_data
 def get_data():
-    df_w = pd.read_csv('data/co2_total_world.csv')
+    df_w = pd.read_csv("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/co2_total_world.csv")
     df_w = df_w.drop(columns=['Unnamed: 0'])
-    df_total = pd.read_csv('data/co2_total.csv')
+    df_total = pd.read_csv("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/co2_total.csv")
     df_total = df_total.drop(columns=['Unnamed: 0'])
     countries = df_total['Entity'].unique()
     return df_w, df_total, countries
