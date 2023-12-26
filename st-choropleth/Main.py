@@ -13,6 +13,6 @@ st.markdown("""
 
 col2, col3, col4 = st.columns(3)
                        
-col2.image("C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images\1_VyS4gt40OKHc_i6FSRGIrA.png")
-col3.image("C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images\Screenshot 2023-03-08 194017.png")
-col4.image("C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images\Screenshot 2023-12-20 200434.png")
+col2.image(r"C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images\1_VyS4gt40OKHc_i6FSRGIrA.png")
+col3.image(r"C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images\Screenshot 2023-03-08 194017.png")
+col4.image(r"C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images\Screenshot 2023-12-20 200434.png")
