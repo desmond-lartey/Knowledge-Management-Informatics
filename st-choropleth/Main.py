@@ -14,5 +14,5 @@ st.markdown("""
 col2, col3, col4 = st.columns(3)
                        
 col2.image(r"C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images\hCuKaY546I7SWuc2_Vst1w.png")
-col3.image(r"C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images\Screenshot 2023-03-08 194017.png")
-col4.image(r"C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images\Screenshot 2023-12-20 200434.png")
+col3.image(r"C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images\Screenshot2023-03-08194017.png")
+col4.image(r"C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images\Screenshot2023-12-20200434.png")
