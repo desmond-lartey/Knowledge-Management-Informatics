@@ -2,14 +2,27 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import json
+import requests
 
 st.set_page_config(layout="wide")
 
 st.title("Population of Australian States")
 st.info("Hover over the map to see the names of the states and their population")
 
-f = open("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/geo/australia.geojson")
-oz = json.load(f)
+#read the files differently
+
+url = "https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/geo/australia.geojson"
+response = requests.get(url)
+
+# Check if the request was successful
+if response.status_code == 200:
+    oz = json.loads(response.text)
+else:
+    print(f"Failed to retrieve data: {response.status_code}")
+
+#read file original
+#f = open('geo/australia.geojson')
+#oz = json.load(f)
 #oz["features"][1]
 
 
