@@ -11,26 +11,27 @@ st.markdown("""
 ---
 """)
 
-import os
 import streamlit as st
+import os
 
-# Base directory for images
-base_dir = "images"  # Relative path
+# Define the relative path to your images directory
+images_dir = "images"
 
-# Image file names
+# Image filenames
 image_files = ["a.png", "b.png", "c.png"]
 
-# Columns for displaying images
+# Create columns for the images
 cols = st.beta_columns(3)
 
-for i, file in enumerate(image_files):
-    # Construct full file path
-    file_path = os.path.join(base_dir, file)
+# Display each image in a separate column
+for i, filename in enumerate(image_files):
+    # Construct the full path to the image
+    image_path = os.path.join(images_dir, filename)
 
-    # Check if the file exists
-    if os.path.exists(file_path):
-        # Display the image in the appropriate column
-        cols[i].image(file_path)
+    # Check if the image exists
+    if os.path.exists(image_path):
+        # Display the image
+        cols[i].image(image_path)
     else:
-        # Handle the error (e.g., display a placeholder or a warning message)
-        cols[i].write(f"Image {file} not found.")
+        # Show a message if the image is not found
+        cols[i].write(f"Image {filename} not found at {image_path}")
