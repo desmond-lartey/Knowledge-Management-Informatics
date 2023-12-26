@@ -18,7 +18,7 @@ st.markdown("""
 col1  = st.columns([1])
 
 # Adjust the width of the images as needed
-image_width = 800  # Example width, you can adjust this
+image_width = 750  # Example width, you can adjust this
 
 # Display the images with the specified width
 #col2.image("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/images/a.png", width=image_width)
