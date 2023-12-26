@@ -8,6 +8,15 @@ df_w = pd.read_csv("https://raw.githubusercontent.com/desmond-lartey/Knowledge-M
 df_total = pd.read_csv("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/co2_total.csv")
 
 
+try:
+    df_w = pd.read_csv("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/co2_total_world.csv")
+except Exception as e:
+    st.error(f"Failed to load co2_total_world.csv: {e}")
+
+try:
+    df_total = pd.read_csv("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/co2_total.csv")
+except Exception as e:
+    st.error(f"Failed to load co2_total.csv: {e}")
 
 
 if 'year' not in st.session_state:
