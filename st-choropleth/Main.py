@@ -15,7 +15,7 @@ st.markdown("""
 
 # Define your columns
 #col2, col3, col4 = st.columns(3)
-col1  = st.columns[1]
+col1  = st.columns([1])
 
 # Adjust the width of the images as needed
 image_width = 600  # Example width, you can adjust this
@@ -25,4 +25,4 @@ image_width = 600  # Example width, you can adjust this
 #col3.image("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/images/b.png", width=image_width)
 #col4.image("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/images/c.png", width=image_width)
 
-col1.image("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/images/c.png", width=image_width)
+col1.image("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/images/d.png", width=image_width)
