@@ -11,6 +11,8 @@ st.markdown("""
 ---
 """)
 
+import os
+
 # Absolute path to your images directory on your local machine
 # Make sure to use double backslashes on Windows or raw string literals
 images_dir = r"C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images"
