@@ -8,7 +8,7 @@ st.set_page_config(layout="wide")
 st.title("Population of European Countries")
 st.info("Hover over the map to see the names of the states and their population")
 
-df = pd.read_csv('data/europop.csv')
+df = pd.read_csv("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/europop.csv")
 
 col1, col2 = st.columns(2)
 
