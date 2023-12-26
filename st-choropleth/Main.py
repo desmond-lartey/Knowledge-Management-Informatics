@@ -26,3 +26,15 @@ image_width = 800  # Example width, you can adjust this
 #col4.image("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/images/c.png", width=image_width)
 
 col1[0].image("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/images/d.png", width=image_width)
+
+
+
+# Sidebar content
+st.sidebar.markdown("""
+## About This App
+This application, originally developed by Alan Jones, has been extensively modified, upgraded, and enhanced by Desmond Lartey to incorporate various advanced functionalities. The app now integrates AI and machine learning to facilitate predictive analysis and support decision-making across different disciplines. It represents a dynamic fusion of technology and expertise, crafted to offer insightful solutions and decision support in a range of fields.
+""")
+
+# Sidebar - Copyright information
+st.sidebar.markdown("---")
+st.sidebar.markdown("© 2023. All Rights Reserved.")
