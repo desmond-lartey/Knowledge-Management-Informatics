@@ -11,8 +11,26 @@ st.markdown("""
 ---
 """)
 
-col2, col3, col4 = st.columns(3)
-                       
-col2.image(r"C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images\a.png")
-col3.image(r"C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images\b.png")
-col4.image(r"C:\Users\Gebruiker\Desktop\My Lab\Knowledge-Management-Informatics\Knowledge-Management-Informatics\st-choropleth\images\c.png")
+import os
+import streamlit as st
+
+# Base directory for images
+base_dir = "images"  # Relative path
+
+# Image file names
+image_files = ["a.png", "b.png", "c.png"]
+
+# Columns for displaying images
+cols = st.beta_columns(3)
+
+for i, file in enumerate(image_files):
+    # Construct full file path
+    file_path = os.path.join(base_dir, file)
+
+    # Check if the file exists
+    if os.path.exists(file_path):
+        # Display the image in the appropriate column
+        cols[i].image(file_path)
+    else:
+        # Handle the error (e.g., display a placeholder or a warning message)
+        cols[i].write(f"Image {file} not found.")
