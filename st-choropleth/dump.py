@@ -15,7 +15,7 @@ def draw(df, col, max, min, first_year, last_year):
   return fig
 
 
-df_total = pd.read_csv('co2_total.csv')
+df_total = pd.read_csv("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/co2_total.csv")
 col = 'Annual CO₂ emissions'
 max = df_total[col].max()
 min = df_total[col].min()
@@ -25,7 +25,7 @@ last_year = df_total['Year'].max()
 fig = draw(df_total,'Annual CO₂ emissions', max, min, first_year, last_year )
 st.plotly_chart(fig)
 
-df_capita = pd.read_csv('co2-per-capita.csv')
+df_capita = pd.read_csv("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/co2-per-capita.csv")
 col = 'Annual CO₂ emissions (per capita)'
 max = 20 #df_capita[col].max()
 min = df_capita[col].min()
@@ -35,11 +35,12 @@ last_year = df_capita['Year'].max()
 fig = draw(df_capita,col, max, min, first_year, last_year )
 st.plotly_chart(fig)
 
-f = open('australia.geojson')
+f = open("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/geo/australia.geojson")
+
 oz = json.load(f)
 oz["features"][2]['properties']
 
-df = pd.read_csv('Australian Bureau of Statistics.csv')
+df = pd.read_csv("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/Australian Bureau of Statistics.csv")
 
 fig = px.choropleth(df, geojson=oz, color="Population at 31 March 2023 ('000)",
                     locations="State", featureidkey="properties.name",
@@ -49,7 +50,7 @@ fig.update_geos(fitbounds="locations")#, visible=True)
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 st.plotly_chart(fig)
 
-f = open('/geo/countries.geo.json')
+f = open("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/geo/countries.geo.json")
 world = json.load(f)
 
 fig = px.choropleth_mapbox(df_total_2021, geojson=world, locations='Code', color=col,
