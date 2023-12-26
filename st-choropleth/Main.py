@@ -7,7 +7,7 @@ st.markdown("""
 # AI Machine Learning and decision support system
 ---
 
-### Select the pages from the sidebar to see demonstrations of the various aspects of Plotly's map functions.
+### Select the Knowledge management info from the sidebar to see demonstrations of the various aspects.
 
 ---
 """)
@@ -18,7 +18,7 @@ st.markdown("""
 col1  = st.columns([1])
 
 # Adjust the width of the images as needed
-image_width = 600  # Example width, you can adjust this
+image_width = 800  # Example width, you can adjust this
 
 # Display the images with the specified width
 #col2.image("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/images/a.png", width=image_width)
