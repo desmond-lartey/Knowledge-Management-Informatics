@@ -8,7 +8,7 @@ st.set_page_config(layout="wide")
 st.title("Population of Australian States")
 st.info("Hover over the map to see the names of the states and their population")
 
-f = open("https://github.com/desmond-lartey/Knowledge-Management-Informatics/blob/Fires/st-choropleth/geo/australia.geojson")
+f = open("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/geo/australia.geojson")
 oz = json.load(f)
 #oz["features"][1]
 
