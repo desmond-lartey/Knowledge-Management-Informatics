@@ -21,7 +21,7 @@ images_dir = "images"
 image_files = ["a.png", "b.png", "c.png"]
 
 # Create columns for the images
-cols = st.beta_columns(3)
+cols = st.columns(3)
 
 # Display each image in a separate column
 for i, filename in enumerate(image_files):
