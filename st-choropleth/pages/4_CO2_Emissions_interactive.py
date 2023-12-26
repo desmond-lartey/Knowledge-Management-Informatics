@@ -16,7 +16,7 @@ st.info("""Use the slider to select a year to display
 
 col1, col2 = st.columns(2)
 
-df_total = pd.read_csv('data/co2_total.csv')
+df_total = pd.read_csv("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/st-choropleth/data/co2_total.csv")
 col = 'Annual CO₂ emissions'
 max = df_total[col].max()
 min = df_total[col].min()
