@@ -12,26 +12,22 @@ st.markdown("""
 """)
 
 import streamlit as st
-import os
 
-# Define the relative path to your images directory
-images_dir = "images"
+st.set_page_config(layout="wide")
 
-# Image filenames
-image_files = ["a.png", "b.png", "c.png"]
+st.markdown("""
+# Towards a GIS using Plotly and Streamlit
+---
+            
+### Select the pages from the sidebar to see demonstrations of the various aspects of Plotly's map functions.
 
-# Create columns for the images
-cols = st.columns(3)
+#### The app is is described and documented in the tutorial [__*How to create a GIS with Plotly and Streamlit*__](https://towardsdatascience.com/how-to-create-a-simple-gis-map-with-plotly-and-streamlit-7732d67b84e2).
+            
+---
+""")
 
-# Display each image in a separate column
-for i, filename in enumerate(image_files):
-    # Construct the full path to the image relative to the project directory
-    image_path = os.path.join(images_dir, filename)
-
-    # Check if the image exists
-    if os.path.isfile(image_path):
-        # Display the image
-        cols[i].image(image_path)
-    else:
-        # Show a message if the image is not found
-        cols[i].error(f"Image {filename} not found at {image_path}")
+col2, col3, col4 = st.columns(3)
+                       
+col2.image("images/1_VyS4gt40OKHc_i6FSRGIrA.png")
+col3.image("images/Screenshot 2023-03-08 194017.png")
+col4.image("images/Screenshot 2023-12-20 200434.png")
