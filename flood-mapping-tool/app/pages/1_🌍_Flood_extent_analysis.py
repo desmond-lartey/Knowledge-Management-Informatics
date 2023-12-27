@@ -26,7 +26,7 @@ st.set_page_config(layout="wide", page_title=params["browser_title"])
 toggle_menu_button()
 
 # Create sidebar
-add_logo("app/img/MA-logo.png")
+add_logo("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/img/MA-logo.png")
 add_about()
 
 # Page title
