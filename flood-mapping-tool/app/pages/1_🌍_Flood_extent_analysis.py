@@ -47,7 +47,7 @@ def get_base64_of_bin_file(url_or_path):
     return base64.b64encode(file_content).decode("utf-8")
 
 # Create sidebar
-add_logo("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/MA-logo.png")
+add_logo("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/MAlogo.png")
 add_about()
 
 
