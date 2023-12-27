@@ -17,22 +17,36 @@ st.set_page_config(layout="wide", page_title=params["browser_title"])
 toggle_menu_button()
 
 
+import requests
+import base64
+from io import BytesIO
+
 def get_base64_of_bin_file(url_or_path):
     """
     This function will handle both URLs and local file paths.
     It opens the file or fetches it from a URL, then converts it to a base64 string.
     """
-    if url_or_path.startswith('http://') or url_or_path.startswith('https://'):
-        response = requests.get(url_or_path)
-        if response.status_code == 200:
-            file_content = BytesIO(response.content)
+    try:
+        if url_or_path.startswith('http://') or url_or_path.startswith('https://'):
+            response = requests.get(url_or_path)
+            if response.status_code == 200:
+                file_content = BytesIO(response.content)
+            else:
+                raise Exception(f"Error fetching file from URL: {url_or_path}, Status Code: {response.status_code}")
         else:
-            raise Exception(f"Error fetching file from URL: {url_or_path}")
-    else:
-        with open(url_or_path, "rb") as f:
-            file_content = f.read()
+            with open(url_or_path, "rb") as f:
+                file_content = f.read()
 
-    return base64.b64encode(file_content).decode("utf-8")
+        return base64.b64encode(file_content).decode("utf-8")
+    except Exception as e:
+        # Handle any exception (can be replaced with more specific error handling)
+        print(f"An error occurred: {e}")
+        return None  # Or return a default image's base64 string
+
+# Example usage
+add_logo("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/MAlogo.png")
+add_about()
+
 # Create sidebar
 add_logo("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/MAlogo.png")
 add_about()
