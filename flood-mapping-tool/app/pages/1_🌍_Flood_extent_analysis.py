@@ -18,6 +18,8 @@ from src.utils import (
 from src.utils_ee import ee_initialize
 from src.utils_flood_analysis import derive_flood_extents
 from streamlit_folium import st_folium
+import requests
+from io import BytesIO
 
 # Page configuration
 st.set_page_config(layout="wide", page_title=params["browser_title"])
@@ -25,8 +27,7 @@ st.set_page_config(layout="wide", page_title=params["browser_title"])
 # If app is deployed hide menu button
 toggle_menu_button()
 
-import requests
-from io import BytesIO
+
 
 def get_base64_of_bin_file(url_or_path):
     """
