@@ -78,34 +78,33 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+from PIL import Image
 import requests
-import base64
 from io import BytesIO
 
-def get_base64_of_bin_file(url_or_path):
+def open_image_from_url(url):
     """
-    This function will handle both URLs and local file paths.
-    It opens the file or fetches it from a URL, then converts it to a base64 string.
-    """
-    try:
-        if url_or_path.startswith('http://') or url_or_path.startswith('https://'):
-            response = requests.get(url_or_path)
-            if response.status_code == 200:
-                file_content = BytesIO(response.content)
-            else:
-                raise Exception(f"Error fetching file from URL: {url_or_path}, Status Code: {response.status_code}")
-        else:
-            with open(url_or_path, "rb") as f:
-                file_content = f.read()
+    Open an image from a given URL.
 
-        return base64.b64encode(file_content).decode("utf-8")
-    except Exception as e:
-        # Handle any exception (can be replaced with more specific error handling)
-        print(f"An error occurred: {e}")
-        return None  # Or return a default image's base64 string
+    Args:
+        url (str): URL of the image to be opened.
+
+    Returns:
+        Image: An Image object.
+    """
+    response = requests.get(url)
+    if response.status_code == 200:
+        img = Image.open(BytesIO(response.content))
+        return img
+    else:
+        raise Exception(f"Error fetching image from URL: {url}, Status Code: {response.status_code}")
+
+# Usage example
+img_url = "https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/workflow.png"
+img = open_image_from_url(img_url)
 
 # Add image workflow
-img = Image.open("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/workflow.png")
+#img = Image.open("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/workflow.png")
 col1, mid, col2, last = st.columns([5, 3, 10, 10])
 with col1:
     st.image(img, width=350)
