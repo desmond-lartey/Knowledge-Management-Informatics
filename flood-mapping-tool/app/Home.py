@@ -48,8 +48,8 @@ add_logo("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-
 add_about()
 
 # Create sidebar
-add_logo("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/MAlogo.png")
-add_about()
+#add_logo("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/MAlogo.png")
+#add_about()
 
 # Set page style
 set_home_page_style()

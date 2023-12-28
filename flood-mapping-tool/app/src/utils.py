@@ -7,6 +7,39 @@ import streamlit as st
 from src.config_parameters import params
 
 
+#Handle local drive and url files
+import base64
+import requests
+from io import BytesIO
+
+def get_base64_of_bin_file(png_file):
+    """
+    Get base64 from image file or URL.
+
+    Inputs:
+        png_file (str): Image filename or URL.
+
+    Returns:
+        str: Encoded ASCII file.
+    """
+    try:
+        if png_file.startswith('http://') or png_file.startswith('https://'):
+            # Handle as URL
+            response = requests.get(png_file)
+            if response.status_code == 200:
+                data = BytesIO(response.content).getvalue()
+            else:
+                raise Exception(f"Error fetching file from URL: {png_file}, Status Code: {response.status_code}")
+        else:
+            # Handle as local file
+            with open(png_file, "rb") as f:
+                data = f.read()
+        
+        return base64.b64encode(data).decode()
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None  # Return None or handle the error as needed
+
 # Check if app is deployed
 def is_app_on_streamlit():
     """Check whether the app is on streamlit or runs locally."""
