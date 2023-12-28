@@ -9,6 +9,18 @@ from src.utils import (
 )
 import requests
 from io import BytesIO
+# Import necessary libraries
+import datetime as dt
+import ee
+import folium
+import geemap.foliumap as geemap
+import streamlit_ext as ste
+from folium.plugins import Draw, Geocoder, MiniMap
+from src.config_parameters import params
+from src.utils import add_about, add_logo, set_tool_page_style, toggle_menu_button
+from src.utils_ee import ee_initialize
+from src.utils_flood_analysis import derive_flood_extents
+from streamlit_folium import st_folium
 
 # Page configuration
 st.set_page_config(layout="wide", page_title=params["browser_title"])
@@ -56,6 +68,9 @@ set_home_page_style()
 
 # Page title
 st.markdown("# Home")
+
+# Initialize Google Earth Engine with a service account
+ee_initialize(force_use_service_account=True)
 
 # First section
 st.markdown("## Introduction")
