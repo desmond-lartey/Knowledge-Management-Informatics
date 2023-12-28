@@ -34,3 +34,25 @@ def ee_initialize(force_use_service_account: bool = False):
         ee.Initialize(credentials)
     else:
         ee.Initialize()
+
+
+# Import necessary libraries for Earth Engine initialization
+import ee
+import streamlit as st
+from google.oauth2 import service_account
+from ee import oauth
+
+def ee_initialize(force_use_service_account: bool = False):
+    """Initialize Google Earth Engine with optional service account.
+
+    Args:
+        force_use_service_account (bool): If True, forces the use of a service account.
+    """
+    if force_use_service_account or "ee_keys" in st.secrets:
+        service_account_keys = st.secrets["ee_keys"]
+        credentials = service_account.Credentials.from_service_account_info(
+            service_account_keys, scopes=oauth.SCOPES
+        )
+        ee.Initialize(credentials)
+    else:
+        ee.Initialize()
