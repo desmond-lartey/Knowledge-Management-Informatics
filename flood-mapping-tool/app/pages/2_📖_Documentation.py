@@ -78,6 +78,32 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+import requests
+import base64
+from io import BytesIO
+
+def get_base64_of_bin_file(url_or_path):
+    """
+    This function will handle both URLs and local file paths.
+    It opens the file or fetches it from a URL, then converts it to a base64 string.
+    """
+    try:
+        if url_or_path.startswith('http://') or url_or_path.startswith('https://'):
+            response = requests.get(url_or_path)
+            if response.status_code == 200:
+                file_content = BytesIO(response.content)
+            else:
+                raise Exception(f"Error fetching file from URL: {url_or_path}, Status Code: {response.status_code}")
+        else:
+            with open(url_or_path, "rb") as f:
+                file_content = f.read()
+
+        return base64.b64encode(file_content).decode("utf-8")
+    except Exception as e:
+        # Handle any exception (can be replaced with more specific error handling)
+        print(f"An error occurred: {e}")
+        return None  # Or return a default image's base64 string
+
 # Add image workflow
 img = Image.open("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/workflow.png")
 col1, mid, col2, last = st.columns([5, 3, 10, 10])
