@@ -79,7 +79,7 @@ st.markdown(
 )
 
 # Add image workflow
-img = Image.open("app/img/workflow.png")
+img = Image.open("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/workflow.png")
 col1, mid, col2, last = st.columns([5, 3, 10, 10])
 with col1:
     st.image(img, width=350)
