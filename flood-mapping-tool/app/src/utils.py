@@ -185,7 +185,7 @@ def add_about():
     st.sidebar.markdown("## About")
     st.sidebar.markdown(
         f"""
-        <div class='warning' style='
+        <div class='about-section' style='
             background-color: {params["about_box_background_color"]};
             margin: 0px;
             padding: 1em;'
@@ -205,14 +205,13 @@ def add_about():
             '>
                 <a href='{params["url_project_wiki"]}'>Wiki reference page</a><br>
                 
-                
             </p>
             <p style='
                 margin-left:1em;
                 font-size: 1rem;
                 margin: 0px
             '>
-                This application was originally created by the Map Action humanitarian team. Desmond Lartey enhanced the app to include features such as impact analysis on various land use types, along with comprehensive flood damage assessments for each land use category.
+                This application was originally created by the Map Action humanitarian team. It was later enhanced by Desmond Lartey, who incorporated features such as impact analysis on various land use types and comprehensive flood damage assessments for each land use category.
             </p>
         </div>
         """,
