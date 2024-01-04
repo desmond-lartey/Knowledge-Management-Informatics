@@ -70,7 +70,7 @@ set_home_page_style()
 st.markdown("# Home")
 
 # Initialize Google Earth Engine with a service account
-ee_initialize(force_use_service_account=True)
+ee_initialize  #(force_use_service_account=True)
 
 # First section
 st.markdown("## Introduction")
