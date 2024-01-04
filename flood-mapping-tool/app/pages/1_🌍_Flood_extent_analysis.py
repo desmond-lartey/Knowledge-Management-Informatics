@@ -84,8 +84,8 @@ def ee_initialize(force_use_service_account: bool = False):
     Args:
         force_use_service_account (bool): If True, forces the use of a service account.
     """
-    if force_use_service_account or "ee_keys" in st.secrets:
-        service_account_keys = st.secrets["ee_keys"]
+    if force_use_service_account or "json_data" in st.secrets:
+        service_account_keys = st.secrets["json_data"]
         credentials = service_account.Credentials.from_service_account_info(
             service_account_keys, scopes=oauth.SCOPES
         )
