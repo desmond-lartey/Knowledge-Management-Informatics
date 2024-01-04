@@ -204,7 +204,7 @@ def add_about():
                 margin: 0px
             '>
                 <a href='{params["url_project_wiki"]}'>Wiki reference page</a><br>
-                <!<a href='{params["url_github_repo"]}'>GitHub repository</a><br>-->
+                <!<a href='{params["url_github_repo"]}'>GitHub repository</a><br>
                 <a href='{params["url_data_science_wiki"]}'>Data Science Lab</a>-->
             </p>
             <p style='
