@@ -82,7 +82,7 @@ def set_tool_page_style():
         unsafe_allow_html=True,
     )
 
-st.legacy_caching.clear_cache()
+
 
 # Sidebar
 @st.cache(allow_output_mutation=True)
