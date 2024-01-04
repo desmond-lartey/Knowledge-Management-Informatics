@@ -56,11 +56,11 @@ def get_base64_of_bin_file(url_or_path):
         return None  # Or return a default image's base64 string
 
 # Example usage
-add_logo("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/MAlogo2.png")
+add_logo("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/MAlogo3.png")
 add_about()
 
 # Create sidebar
-#add_logo("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/MAlogo2.png")
+#add_logo("https://raw.githubusercontent.com/desmond-lartey/Knowledge-Management-Informatics/Fires/flood-mapping-tool/app/img/MAlogo3.png")
 #add_about()
 
 
