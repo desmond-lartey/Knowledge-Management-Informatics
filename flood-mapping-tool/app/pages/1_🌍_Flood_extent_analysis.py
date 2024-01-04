@@ -85,16 +85,19 @@ def ee_initialize(force_use_service_account: bool = False):
         force_use_service_account (bool): If True, forces the use of a service account.
     """
     if force_use_service_account or "json_data" in st.secrets:
+        # Assuming 'json_data' is the correct key for your service account credentials
         service_account_keys = st.secrets["json_data"]
         credentials = service_account.Credentials.from_service_account_info(
             service_account_keys, scopes=oauth.SCOPES
         )
         ee.Initialize(credentials)
     else:
+        # Initialize with default credentials
         ee.Initialize()
 
 # Usage
 ee_initialize(force_use_service_account=True)
+
 
 
 # Output_created is useful to decide whether the bottom panel with the
