@@ -4,7 +4,7 @@ params = {
     "browser_title": "Flood mapping tool - MapAction",
     # Data scientists involved
     "data_scientists": {
-        #"Piet": "pgerrits@mapaction.org",
+        "Desmond": "larteydesmond3@gmail.com",
         #"Daniele": "dcastellana@mapaction.org",
         #"Cate": "cseale@mapaction.org",
     

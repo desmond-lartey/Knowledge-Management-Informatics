@@ -184,9 +184,9 @@ def add_about():
     today = date.today().strftime("%B %d, %Y")
     st.sidebar.markdown("## About")
     st.sidebar.markdown(
-        """
+        f"""
         <div class='warning' style='
-            background-color: %s;
+            background-color: {params["about_box_background_color"]};
             margin: 0px;
             padding: 1em;'
         '>
@@ -196,27 +196,29 @@ def add_about():
                 font-size: 1rem;
                 margin-bottom: 1em;
             '>
-                Last update: %s
+                Last update: {today}
             </p>
             <p style='
                 margin-left:1em;
                 font-size: 1rem;
                 margin: 0px
             '>
-                <a href='%s'>Wiki reference page</a><br>
-                <a href='%s'>GitHub repository</a><br>
-                <a href='%s'>Data Science Lab</a>
+                <a href='{params["url_project_wiki"]}'>Wiki reference page</a><br>
+                <a href='{params["url_github_repo"]}'>GitHub repository</a><br>
+                <a href='{params["url_data_science_wiki"]}'>Data Science Lab</a>
+            </p>
+            <p style='
+                margin-left:1em;
+                font-size: 1rem;
+                margin: 0px
+            '>
+                This application was originally created by the Map Action humanitarian team. Desmond Lartey enhanced the app to include features such as impact analysis on various land use types, along with comprehensive flood damage assessments for each land use category.
             </p>
         </div>
-        """ % (
-            params["about_box_background_color"],
-            today,
-            params["url_project_wiki"],
-            params["url_github_repo"],
-            params["url_data_science_wiki"],
-        ),
+        """,
         unsafe_allow_html=True,
     )
+
 
     # Contacts textbox
     st.sidebar.markdown(" ")
