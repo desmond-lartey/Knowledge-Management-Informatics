@@ -78,21 +78,19 @@ import streamlit as st
 from google.oauth2 import service_account
 from ee import oauth
 
-def ee_initialize(force_use_service_account: bool = False):
-    """Initialize Google Earth Engine.
-
-    Args:
-        force_use_service_account (bool): If True, forces the use of a service account.
-    """
+def ee_initialize(force_use_service_account=False):
     if force_use_service_account or "json_data" in st.secrets:
-        # Assuming 'json_data' is the correct key for your service account credentials
-        service_account_keys = st.secrets["json_data"]
+        json_credentials = st.secrets["json_data"]
+        credentials_dict = json.loads(json_credentials)
+
+        # Debugging: Print the keys of the credentials dictionary
+        print("Credentials keys:", credentials_dict.keys())
+
         credentials = service_account.Credentials.from_service_account_info(
-            service_account_keys, scopes=oauth.SCOPES
+            credentials_dict, scopes=oauth.SCOPES
         )
         ee.Initialize(credentials)
     else:
-        # Initialize with default credentials
         ee.Initialize()
 
 # Usage
