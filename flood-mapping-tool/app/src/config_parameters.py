@@ -5,8 +5,7 @@ params = {
     # Data scientists involved
     "data_scientists": {
         "Desmond": "larteydesmond3@gmail.com",
-        #"Daniele": "dcastellana@mapaction.org",
-        #"Cate": "cseale@mapaction.org",
+
     
     },
     # Urls
