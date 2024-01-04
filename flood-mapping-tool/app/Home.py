@@ -22,6 +22,8 @@ from src.utils_ee import ee_initialize
 from src.utils_flood_analysis import derive_flood_extents
 from streamlit_folium import st_folium
 
+st.legacy_caching.clear_cache()
+
 # Page configuration
 st.set_page_config(layout="wide", page_title=params["browser_title"])
 
