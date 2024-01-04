@@ -12,6 +12,10 @@ def ee_initialize():
     # Parse the JSON credentials
     credentials_dict = json.loads(json_credentials)
 
+    # Ensure 'client_email' is present in the credentials
+    if 'client_email' not in credentials_dict:
+        raise ValueError("Service account info is missing 'client_email' field.")
+
     # Create credentials from the parsed JSON
     credentials = service_account.Credentials.from_service_account_info(credentials_dict)
 
