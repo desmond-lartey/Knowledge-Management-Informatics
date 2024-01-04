@@ -1,41 +1,47 @@
-"""Module for Earth Engine-related functionalities."""
 import ee
+import json
 import streamlit as st
-from ee import oauth
 from google.oauth2 import service_account
-from src.utils import is_app_on_streamlit
 
-@st.experimental_memo
-def ee_initialize(force_use_service_account: bool = False):
-    """Initialize Google Earth Engine.
+def ee_initialize():
+    """Initialize Google Earth Engine using service account credentials.
 
-    This function checks whether the app is deployed on Streamlit Cloud and
-    initializes Google Earth Engine accordingly. If the app runs locally,
-    personal Google account credentials are used. If deployed on Streamlit Cloud,
-    it uses credentials from the secrets field in the cloud.
-
-    Args:
-        force_use_service_account (bool): If True, a dedicated Google service
-            account is used, regardless of whether the app is run locally or
-            in the cloud. To use a service account locally, a file named
-            "secrets.toml" should be added to the ".streamlit" folder in the
-            main project folder.
+    This function uses credentials from Streamlit secrets when deployed on Streamlit Cloud,
+    and local JSON data for local development.
     """
     try:
-        if force_use_service_account or is_app_on_streamlit():
-            # Retrieve service account keys from Streamlit secrets
-            service_account_keys = st.secrets.get("ee_keys")
-            if service_account_keys is None:
-                raise ValueError("Service account keys not found in Streamlit secrets.")
-            credentials = service_account.Credentials.from_service_account_info(
-                service_account_keys, scopes=oauth.SCOPES
-            )
-            ee.Initialize(credentials)
+        # Check if running on Streamlit Cloud
+        if 'json_data' in st.secrets:
+            json_data = st.secrets["json_data"]
         else:
-            # Initialize with default credentials (local development)
-            ee.Initialize()
+            # Local development - Use local JSON data
+            json_data = '''
+            {
+                "type": "service_account",
+                "project_id": "ee-desmond",
+                "private_key_id": "3f9d658216fbf51e3764ad7e1581a66eaa76ffc0",
+                "private_key": "-----BEGIN PRIVATE KEY-----\\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDOxDPaHDLJTVZT\\nEM37L9tYuWWUT3+3mg3dnOo98b19KJ+MFQOOzJbJdm8jBCNV2muWlO14hisaDgSs\\nv7x7VBcBwWI112jAqWQ2itX+HjRVdlPjTa5sq8QOMexWy8g6yWY8MYdkRk+jfCpl\\nRonyUnO0++BJjwTPL3dUOyaFJaQdJUJ2l2nzv4Sk7P+nDB0JMXiipPH/AlFi744Y\\nwla94XoCuakOZLgMr8oL77f2lhwKx7EzRfdqe65XFXHWDOzlo8HbHRB4ZmnwaD6i\\nxdKLvOXLGzd9h1xQ4SOX535dAgRdOgC8LbsbEz0kxtZpG2ZPCXqObiFSjXB5jQAB\\ncNqQidRnAgMBAAECggEAMZr6waogORFX04flkwzROAEKsME95+OKzg82V3QmvN9B\\nH89u0hSdXGoQkbsNayyCwVarfk3aC18vme5KHuB2wJIPqNEsLYS2KSu32UaP0a0Y\\nxSC+5w1ydOFfTReIyynEYE6Vp+YCdztzxGZe9Ab6AYKoNZ2dTsOZgljKjgkQzXjT\\ndvbTYcUbM4Q/lTNZp4T8/zZ2+60ZarTEtQAsg7GJBy+WIkpq6Au0bZ9ZIsnMfF2m\\ntELwsF3gwV7Z0HpZLUMJu/iFEmrmhPWW6SRplIvdMXBXYCrKysBlCVy81gn6CQpO\\n0mEIJ8ZpQOtL5erDYsNT8cOEcKBZU4DNqpxYzhQCAQKBgQDu+c6qVYtZS80maNUB\\nbzKS8Ued2J5rJLqNwmPbhKkkZr0CfIgnCy9MfsNzdD675Oob/NmuxSrhdyx0AGxs\\n+oZp7Fj9YLoV0kk2ne0HAwbZsdY/Pl9LXn2LI/jBrxnD3u6+NPx+seBD+kxIqL/q\\n2r1bwX7nFffjAE3sC6b5eS+xAQKBgQDdfv5ob2KrvKXxzhltpedQCvTLvPKLHdHB\\nrBQtwalRpB4rexMCg/3BaLSEsKoRGMGkWy1OZ5DFElNCpxMMX0xycH7su78BQu7K\\nTHcwkFLlFRexXQfxVbjE/N3qJFg8zAz3t8vOtO7l9tcFgEst3NC9saN27uP3iUQC\\nNMRFgsydZwKBgEAxEfZnLBs8ZUrf9feAqxEVhqs7uLIHF6VkhfY9WEHS5wp38Qqr\\n0nS1yEKHAyLthoUmEkMD61TM8j/mrTlIwjpJpk3JYbLi3Y+yNC0h/wES5/3s/yP7\\nqbVqYDOGmWEnzPGCwiA2H4ui/EK4MXUgdKTlAPWJzSBIwKWbK6rvhoQBAoGAbJft\\nnUA27SIRberw9pwnO0wT1qutcl1NUJnQTtqq69b93614lXwm9iMilgeTacxsa+sz\\n3EPUa3pfjcciBKfYcCcNY31s2O566n3w1cN8kMn1ksSct0qiyxl6p2foRu530R+w\\ncYits9uAcjcDJNolEUu9a/sVk3AeAsLiE35cWTMCgYEAilVBsoXtmPCIm1yNIPoD\\n8h2rxdEQD9/SM1TL2IM2T+NXkb36oWRP5qbtq2p8VDSP3RJWliNELCw6KAXMzqLg\\nP0p7etgxFlje4mtoUdEH+LaymnjPzgXVYAudpKc2me5lFzwlZKtuvgK+TV9cPct/\\nqmy6Gg29NnMqhlPdZhCO69Y=\\n-----END PRIVATE KEY-----\\n",
+                "client_email": "eedesmond@ee-desmond.iam.gserviceaccount.com",
+                "client_id": "101390299790148102978",
+                "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+                "token_uri": "https://oauth2.googleapis.com/token",
+                "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+                "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/eedesmond%40ee-desmond.iam.gserviceaccount.com"
+            }
+            '''
+
+        # Parse the JSON data
+        service_account_info = json.loads(json_data)
+
+        # Create credentials from the service account info
+        credentials = service_account.Credentials.from_service_account_info(service_account_info)
+
+        # Initialize Google Earth Engine with these credentials
+        ee.Initialize(credentials)
+
     except Exception as e:
         print(f"Error initializing Google Earth Engine: {e}")
         raise
 
-# Example usage: ee_initialize(force_use_service_account=True)
+# Example usage
+ee_initialize()
