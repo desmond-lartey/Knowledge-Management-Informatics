@@ -393,7 +393,7 @@ def derive_flood_extents_from_start(
         flood_vectors, flood_rasters, before_filtered, after_filtered: Described in the original function.
     """
     # Set the start date to the beginning of Sentinel-1 dataset availability
-    before_start_date = "2014-10-03"
+    before_start_date = "2015-10-31"
     # Use the current date as the before_end_date to cover all available images up to the flood event
     before_end_date = after_start_date
     
