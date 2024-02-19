@@ -367,3 +367,46 @@ def derive_flood_extents(
         )
 
     return flood_vectors, flood_rasters, before_filtered, after_filtered
+
+
+# Insert the derive_flood_extents_from_start function here
+def derive_flood_extents_from_start(
+    aoi,
+    after_start_date,
+    after_end_date,
+    difference_threshold=1.25,
+    polarization="VH",
+    pass_direction="Ascending",
+    export=False,
+    export_filename="flood_extents_from_start",
+):
+    """
+    Derive flood extents starting from the earliest available Sentinel-1 images.
+    
+    Inputs:
+        aoi (ee.Geometry.Polygon): Geographic extent of analysis area.
+        after_start_date (str): Date in format yyyy-mm-dd for the period after a potential flood event.
+        after_end_date (str): Date in format yyyy-mm-dd for the period after a potential flood event.
+        difference_threshold (float), polarization (str), pass_direction (str), export (bool), export_filename (str) are described in the original function.
+        
+    Returns:
+        flood_vectors, flood_rasters, before_filtered, after_filtered: Described in the original function.
+    """
+    # Set the start date to the beginning of Sentinel-1 dataset availability
+    before_start_date = "2014-10-03"
+    # Use the current date as the before_end_date to cover all available images up to the flood event
+    before_end_date = after_start_date
+    
+    # Call the original derive_flood_extents function with the updated parameters
+    return derive_flood_extents(
+        aoi=aoi,
+        before_start_date=before_start_date,
+        before_end_date=before_end_date,
+        after_start_date=after_start_date,
+        after_end_date=after_end_date,
+        difference_threshold=difference_threshold,
+        polarization=polarization,
+        pass_direction=pass_direction,
+        export=export,
+        export_filename=export_filename,
+    )
