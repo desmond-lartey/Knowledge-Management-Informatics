@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 st.markdown("""
-# AI Machine Learning and decision support system
+# Intelligent decision-making framework for urban planning and policy making process
 ---
 
 ### Select the Knowledge management info from the sidebar to see demonstrations of the various aspects.
