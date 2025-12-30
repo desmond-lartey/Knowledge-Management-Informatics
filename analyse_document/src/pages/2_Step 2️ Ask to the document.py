@@ -26,7 +26,7 @@ def query_page():
 
         if not 'db' in st.session_state:
             st.markdown("<h3 style='text-align: center ; color: red;'>You must create a Data Base</h3>", unsafe_allow_html=True)
-            rain(emoji="⚠️")
+            rain(emoji="")
 
             # Display button and allow switching to the previous step
             st.markdown(button_step2, unsafe_allow_html=True)
