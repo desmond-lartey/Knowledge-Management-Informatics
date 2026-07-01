@@ -1,0 +1,45 @@
+name: AI Governance Daily Updates
+
+on:
+  schedule:
+    # 06:00 CEST = 04:00 UTC
+    - cron: "0 4 * * *"
+
+    # 13:00 CEST = 11:00 UTC
+    - cron: "0 11 * * *"
+
+    # 18:00 CEST = 16:00 UTC
+    - cron: "0 16 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run generator
+        run: python Fires/governance/generate_readme.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add Fires/governance/README.md
+
+          git diff --cached --quiet || (
+            git commit -m "chore: daily AI governance update"
+            git push
+          )
