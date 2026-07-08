@@ -38,10 +38,20 @@
    up with CEST/CET automatically.
 
 5. Right-click `register_task.bat` → **Run as administrator**.
-   It will briefly ask for your Windows password (this lets the
-   task run even when you're logged out — it's stored securely by
-   Windows itself, not by this script). This registers ONE task,
-   `DailyAIGovernanceReadme`, with 3 daily triggers: 06:00, 12:00, 18:00.
+   This registers ONE task, `DailyAIGovernanceReadme`, with 3 daily
+   triggers: 06:00, 12:00, 18:00. The script prints a **CONFIRMED**
+   message with the task name if it worked, or a clear **FAILED /
+   WARNING** message if it didn't — read that output before assuming
+   it worked.
+
+6. Immediately verify it actually registered by running, in any
+   PowerShell window:
+   ```
+   Get-ScheduledTask -TaskName DailyAIGovernanceReadme
+   ```
+   This should print the task's details. If it errors saying the task
+   can't be found, registration silently failed — re-run step 5 as
+   Administrator and check the printed output for the reason.
 
 **That's it. From here on, nothing needs to be double-clicked, ever,
 on any future day** — Windows itself wakes the task up automatically.
@@ -49,12 +59,28 @@ on any future day** — Windows itself wakes the task up automatically.
 ## How "fully automatic" is enforced
 - `-WakeToRun`: if the PC is asleep at the scheduled time, Windows
   wakes it up just enough to run the task.
-- `-StartWhenAvailable`: if the PC was fully off (not just asleep)
-  at 06:00, the task runs as soon as the PC is next turned on,
-  instead of being skipped.
-- The task runs whether or not you're logged in (locked screen is fine).
-- The only things that stop it: the PC being completely powered off
-  for the entire day, or you removing/renaming the files.
+- `-StartWhenAvailable`: if the PC was fully off, or you weren't
+  logged in, at 06:00, the task runs as soon as you next log in that
+  day, instead of being skipped entirely.
+- The task runs whenever you're logged in, even with the screen locked.
+- It will **not** run if the PC is fully signed out or shut down for
+  the entire day — that's the one real limitation. If you regularly
+  shut down overnight, expect the 06:00 run to happen right after you
+  log in each morning instead of exactly at 6:00.
+- The only other things that stop it: you removing/renaming the files,
+  or Windows Update resetting task state (rare, but check occasionally).
+
+## If it stops running again
+This has happened once before (task silently failed to register).
+To check health at any time:
+```powershell
+Get-ScheduledTask -TaskName DailyAIGovernanceReadme
+Get-ScheduledTaskInfo -TaskName DailyAIGovernanceReadme
+```
+The second command shows `LastRunTime`, `LastTaskResult` (0 = success,
+anything else = an error), and `NextRunTime`. If the task is missing
+entirely, just re-run `register_task.bat` as administrator — it's
+safe to re-run any time, it replaces the old version first.
 
 ## What happens each day (3 runs → 3 commits)
 - The script creates `governance/Readme.md` the *first* time it ever runs
