@@ -1,0 +1,48 @@
+name: Daily AI Governance Readme Update
+
+# Runs entirely on GitHub's servers - no dependency on any local
+# machine being on, awake, or logged in.
+#
+# GitHub Actions cron is always UTC and does NOT auto-adjust for
+# daylight saving. To land near 06:00 / 12:00 / 18:00 CEST (UTC+2,
+# summer), we use 04:00 / 10:00 / 16:00 UTC. In winter (CET, UTC+1)
+# this will land ~1 hour later in local terms (e.g. 07:00 CET instead
+# of 06:00 CET) - a known limitation of GitHub's cron, not a bug here.
+on:
+  schedule:
+    - cron: "0 4 * * *"   # ~06:00 CEST
+    - cron: "0 10 * * *"  # ~12:00 CEST
+    - cron: "0 16 * * *"  # ~18:00 CEST
+  workflow_dispatch: {}    # lets you trigger a manual test run from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Fires branch
+        uses: actions/checkout@v4
+        with:
+          ref: Fires
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run daily update script
+        run: python scripts/daily_governance_update.py
+
+      - name: Commit and push if anything changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add governance/Readme.md governance/.run-log.txt
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Governance update run - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+            git push origin Fires
+          fi
