@@ -12,7 +12,7 @@ on:
   schedule:
     - cron: "0 4 * * *"   # ~06:00 CEST
     - cron: "0 10 * * *"  # ~12:00 CEST
-    - cron: "0 16 * * *"  # ~18:00 CEST
+    #- cron: "0 16 * * *"  # ~18:00 CEST
   workflow_dispatch: {}    # lets you trigger a manual test run from the Actions tab
 
 permissions:
