@@ -8,3 +8,4 @@ A daily log of short reflections (auto-generated, 6:00 AM CEST).
 - **2026-07-05**: AI dashboards let officials track KPIs across departments live.
 - **2026-07-08**: Predictive AI helps governments allocate budgets more wisely.
 - **2026-07-09**: AI summarizes citizen feedback to inform government leaders.
+- **2026-07-20**: AI detects fraud patterns hidden in public spending records.
