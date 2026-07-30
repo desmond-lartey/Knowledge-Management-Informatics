@@ -1,8 +1,8 @@
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
-_site/
-.jekyll-cache/
+site/
+.cache/
 *.tif
 *.pth
 .DS_Store
