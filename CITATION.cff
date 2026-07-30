@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this framework, please cite the following."
+title: "From GeoAI to Planning Intelligence: A Spatial Decision-Support Framework for Urban Governance"
+authors:
+  - family-names: Lartey
+    given-names: Desmond
+    affiliation: "International School for Social and Business Studies (ISSBS), Celje, Slovenia"
+    email: larteydesmond3@gmail.com
+  - family-names: Law
+    given-names: Kris M. Y.
+    affiliation: "Deakin University, Australia"
+year: 2026
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/desmond-lartey/Knowledge-Management-Informatics"
+keywords:
+  - GeoAI
+  - spatial decision support
+  - urban governance
+  - planning intelligence
+  - semantic segmentation
+  - urban diagnostics

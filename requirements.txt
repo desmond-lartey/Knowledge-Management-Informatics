@@ -1,0 +1,14 @@
+geoai-py
+osmnx
+rasterio
+geopandas
+shapely
+scikit-image
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+krippendorff
+leafmap
+papermill
