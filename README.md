@@ -18,7 +18,7 @@ Given aerial imagery and building footprint data for an urban area, the pipeline
 
 - A **U-Net segmentation model** that classifies built structures from NAIP aerial imagery, evaluated with standard metrics (IoU = 0.477, F1 = 0.646, Precision = 0.570, Recall = 0.746, Accuracy = 0.805 on held-out validation).
 - A **100-metre spatial grid** in which each cell carries building coverage, vegetation coverage, and road density derived from the imagery and OpenStreetMap.
-- Five **perceptual indicators** — greenness, openness, enclosure, walkability, imageability — computed as morphological proxies from overhead data.
+- Five **perceptual indicators**, greenness, openness, enclosure, walkability, imageability, computed as morphological proxies from overhead data.
 - A **Perceptual Quality Index (PQI)** and a **Combined Urban Risk Index (CURI)** synthesising these indicators into composite diagnostics.
 - **Rule-based planning recommendations** across four intervention categories, generated from transparent threshold logic.
 - A **validation suite** producing expert face-validity statistics, inter-rater reliability, and indicator-weighting sensitivity analysis.
@@ -132,5 +132,5 @@ Released under the MIT License. See [`LICENSE`](LICENSE) for details.
 
 ## Contact
 
-Desmond Lartey — larteydesmond3@gmail.com
+Desmond Lartey, larteydesmond3@gmail.com
 International School for Social and Business Studies (ISSBS), Celje, Slovenia
