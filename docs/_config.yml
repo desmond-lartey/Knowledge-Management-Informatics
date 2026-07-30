@@ -1,0 +1,32 @@
+title: "From GeoAI to Planning Intelligence"
+description: "A Spatial Decision-Support Framework for Urban Governance — reproducible pipeline and documentation"
+theme: jekyll-theme-cayman
+show_downloads: false
+
+# Navigation order for the documentation site
+nav:
+  - title: "Home"
+    url: /
+  - title: "Methodology"
+    url: /methodology
+  - title: "Indicators"
+    url: /indicators
+  - title: "Recommendation Logic"
+    url: /recommendation-logic
+  - title: "Validation"
+    url: /validation
+  - title: "Sensitivity Analysis"
+    url: /sensitivity
+  - title: "Reproducibility"
+    url: /reproducibility
+
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
