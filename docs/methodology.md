@@ -1,7 +1,3 @@
----
-title: Methodology
----
-
 # Methodology
 
 The framework is a five-stage pipeline. Each stage takes the output of the previous one and transforms it into a more governance-relevant form, moving from raw imagery to actionable planning guidance. This page describes each stage in the order the pipeline executes.
@@ -44,23 +40,23 @@ Three primary measurements are extracted per cell:
 - **Vegetation coverage** — the proportion of pixels exceeding an NDVI threshold of 0.2 (or an excess-green proxy where near-infrared bands are unavailable).
 - **Road density** — the total length of drivable road segments intersecting the cell, normalised by cell area, computed in a metric (UTM) coordinate reference system.
 
-Exact formulas are given in [Indicators](indicators).
+Exact formulas are given in [Indicators](indicators.md).
 
 ## Stage 4 — Perceptual indicators and composite indices
 
 Five perceptual indicators are derived from the three primary measurements. These are **morphological proxies computed from overhead imagery**, not direct measurements of lived human perception. The perception literature (Lynch, Ewing and Handy, Tuan) provides the conceptual vocabulary for interpreting morphological patterns in governance-relevant terms; the measurements themselves are grounded in overhead spatial data. This approach follows an established strand of GeoAI research using remotely sensed data to derive morphology-based proxies for perceptual qualities at scale.
 
-The five indicators — greenness, openness, enclosure, walkability, imageability — are normalised via min-max scaling and combined into a **Perceptual Quality Index (PQI)**. A parallel set of risk indicators — sprawl, environmental degradation, infrastructure deficiency — is combined into a **Combined Urban Risk Index (CURI)**. Full formulas and weights are in [Indicators](indicators).
+The five indicators — greenness, openness, enclosure, walkability, imageability — are normalised via min-max scaling and combined into a **Perceptual Quality Index (PQI)**. A parallel set of risk indicators — sprawl, environmental degradation, infrastructure deficiency — is combined into a **Combined Urban Risk Index (CURI)**. Full formulas and weights are in [Indicators](indicators.md).
 
 ## Stage 5 — Rule-based recommendations
 
-The composite indices feed a rule-based recommendation layer that translates diagnostic conditions into planning guidance across four intervention categories. The logic is a transparent decision cascade — high-risk low-quality cells receive integrated interventions, infrastructure-deficient cells receive connectivity interventions, environmentally degraded cells receive greening interventions, and stable cells are flagged for monitoring. The complete decision table is in [Recommendation Logic](recommendation-logic).
+The composite indices feed a rule-based recommendation layer that translates diagnostic conditions into planning guidance across four intervention categories. The logic is a transparent decision cascade — high-risk low-quality cells receive integrated interventions, infrastructure-deficient cells receive connectivity interventions, environmentally degraded cells receive greening interventions, and stable cells are flagged for monitoring. The complete decision table is in [Recommendation Logic](recommendation-logic.md).
 
 Because the logic is rule-based and every threshold is disclosed, a planner encountering any recommendation can trace exactly which indicator condition produced it, and can contest or adjust the recommendation if the local context warrants. This traceability is the mechanism through which the framework supports transparency and accountability: the reasoning from spatial evidence to planning output is fully visible, not hidden inside a learned model.
 
 ## Validation strategy
 
-The framework is assessed along three dimensions, detailed in [Validation](validation) and [Sensitivity Analysis](sensitivity):
+The framework is assessed along three dimensions, detailed in [Validation](validation.md) and [Sensitivity Analysis](sensitivity.md):
 
 1. **Computational consistency** — correlation analysis confirming that the composite indices behave as designed.
 2. **Expert face validity** — eight planning professionals assessing the governance realism of recommendations across 20 randomly sampled cells.

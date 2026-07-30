@@ -34,7 +34,8 @@ Knowledge-Management-Informatics/
 ├── requirements.txt                 ← Python dependencies
 ├── CITATION.cff                     ← citation metadata
 │
-├── docs/                            ← GitHub Pages documentation source
+├── mkdocs.yml                       ← MkDocs Material site config
+├── docs/                            ← documentation source (MkDocs Material)
 │   ├── index.md                     ← documentation home
 │   ├── methodology.md               ← full method with equations
 │   ├── indicators.md                ← every indicator formula, disclosed
@@ -42,7 +43,7 @@ Knowledge-Management-Informatics/
 │   ├── validation.md                ← expert validation & reliability
 │   ├── sensitivity.md               ← PQI weighting robustness
 │   ├── reproducibility.md           ← step-by-step reproduction guide
-│   └── _config.yml                  ← Jekyll / GitHub Pages config
+│   └── javascripts/mathjax.js       ← equation rendering config
 │
 ├── notebooks/
 │   └── GeoAI_Urban_Planner_Pipeline.ipynb   ← full end-to-end pipeline

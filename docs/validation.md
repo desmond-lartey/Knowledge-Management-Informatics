@@ -1,10 +1,6 @@
----
-title: Validation
----
-
 # Validation
 
-The framework is validated along two independent dimensions: **computational consistency** — whether the composite indices behave as designed — and **expert face validity** — whether the resulting recommendations align with professional planning judgment. A third dimension, robustness to indicator weighting, is documented separately in [Sensitivity Analysis](sensitivity).
+The framework is validated along two independent dimensions: **computational consistency** — whether the composite indices behave as designed — and **expert face validity** — whether the resulting recommendations align with professional planning judgment. A third dimension, robustness to indicator weighting, is documented separately in [Sensitivity Analysis](sensitivity.md).
 
 ## Computational consistency assessment
 
@@ -77,4 +73,4 @@ Indicator profiles of expert-reviewed cells grouped by recommendation category c
 
 ## Reproducing the validation
 
-The validation materials — the expert rating template, instructions, and scoring code — are provided in the `validation/` directory and the pipeline notebook. The expert rating sheets are distributed with an empty rating column for professionals to complete; the scoring code computes acceptance rates, category-level agreement, Krippendorff's alpha, and inter-rater Spearman correlations once completed sheets are returned. See [Reproducibility](reproducibility) for the full procedure.
+The validation materials — the expert rating template, instructions, and scoring code — are provided in the `validation/` directory and the pipeline notebook. The expert rating sheets are distributed with an empty rating column for professionals to complete; the scoring code computes acceptance rates, category-level agreement, Krippendorff's alpha, and inter-rater Spearman correlations once completed sheets are returned. See [Reproducibility](reproducibility.md) for the full procedure.

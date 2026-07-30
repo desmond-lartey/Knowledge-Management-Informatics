@@ -1,0 +1,84 @@
+site_name: From GeoAI to Planning Intelligence
+site_description: A Spatial Decision-Support Framework for Urban Governance — reproducible pipeline and documentation
+site_author: Desmond Lartey, Kris M.Y. Law
+site_url: https://desmond-lartey.github.io/Knowledge-Management-Informatics/
+
+repo_name: desmond-lartey/Knowledge-Management-Informatics
+repo_url: https://github.com/desmond-lartey/Knowledge-Management-Informatics
+edit_uri: edit/main/docs/
+
+docs_dir: docs
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  - Home: index.md
+  - Methodology: methodology.md
+  - Indicators & Formulas: indicators.md
+  - Recommendation Logic: recommendation-logic.md
+  - Validation: validation.md
+  - Sensitivity Analysis: sensitivity.md
+  - Reproducibility: reproducibility.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/desmond-lartey/Knowledge-Management-Informatics
+  generator: false
+
+copyright: Copyright &copy; 2026 Desmond Lartey, Kris M.Y. Law — MIT License

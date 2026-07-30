@@ -1,7 +1,3 @@
----
-title: Reproducibility
----
-
 # Reproducibility Guide
 
 This guide reproduces the study end to end. The pipeline is organised so that the computationally heavy stages (tile generation, model training, inference) can be skipped if their outputs already exist, allowing the diagnostic, validation, and sensitivity stages to be reproduced independently.

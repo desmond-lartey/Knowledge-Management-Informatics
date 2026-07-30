@@ -1,7 +1,3 @@
----
-title: Sensitivity Analysis
----
-
 # Sensitivity Analysis
 
 The Perceptual Quality Index combines five indicators using a weighting scheme. Any weighted composite raises a legitimate question: does the result depend on the specific weights chosen, or would any reasonable weighting produce the same spatial pattern? This analysis answers that question directly.
@@ -41,4 +37,4 @@ Sensitivity robustness is directly relevant to the framework's governance role. 
 
 ## Reproducing the analysis
 
-The sensitivity analysis reads directly from the diagnostic output CSV (`AL_urban_grid_results.csv`) and requires no re-running of the segmentation or aggregation stages. The self-contained script is in `src/sensitivity.py` and `figures/sensitivity_figures.py`. See [Reproducibility](reproducibility).
+The sensitivity analysis reads directly from the diagnostic output CSV (`AL_urban_grid_results.csv`) and requires no re-running of the segmentation or aggregation stages. The self-contained script is in `src/sensitivity.py` and `figures/sensitivity_figures.py`. See [Reproducibility](reproducibility.md).

@@ -1,7 +1,3 @@
----
-title: Home
----
-
 # From GeoAI to Planning Intelligence
 
 **A Spatial Decision-Support Framework for Urban Governance**
@@ -36,15 +32,15 @@ Starting from aerial imagery and building footprint data for an urban area, the 
 
 ## How to use this documentation
 
-If you want to understand **how the framework works**, start with [Methodology](methodology).
+If you want to understand **how the framework works**, start with [Methodology](methodology.md).
 
-If you want the **exact formula for any indicator or index**, see [Indicators](indicators).
+If you want the **exact formula for any indicator or index**, see [Indicators](indicators.md).
 
-If you want to see **how recommendations are generated**, see [Recommendation Logic](recommendation-logic).
+If you want to see **how recommendations are generated**, see [Recommendation Logic](recommendation-logic.md).
 
-If you want to understand **how the framework was validated**, see [Validation](validation) and [Sensitivity Analysis](sensitivity).
+If you want to understand **how the framework was validated**, see [Validation](validation.md) and [Sensitivity Analysis](sensitivity.md).
 
-If you want to **reproduce the results yourself**, follow [Reproducibility](reproducibility).
+If you want to **reproduce the results yourself**, follow [Reproducibility](reproducibility.md).
 
 ## Key results at a glance
 

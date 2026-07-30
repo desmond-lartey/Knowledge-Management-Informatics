@@ -1,7 +1,3 @@
----
-title: Recommendation Logic
----
-
 # Rule-Based Recommendation Logic
 
 The recommendation layer translates diagnostic indices into planning guidance. It is deliberately **rule-based rather than learned**: every recommendation follows from explicit threshold conditions on the composite indices, so a planner can trace exactly which condition produced any given recommendation and contest it where local context warrants. This traceability is the mechanism through which the framework supports transparency and accountability.

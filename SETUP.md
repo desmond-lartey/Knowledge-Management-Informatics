@@ -1,6 +1,6 @@
 # Repository Setup Guide
 
-This guide walks through pushing this repository to GitHub and enabling the documentation site. Do this once.
+This guide walks through pushing this repository to GitHub and publishing the MkDocs Material documentation site. Do this once.
 
 ## 1. Push to your repository
 
@@ -9,55 +9,54 @@ cd geoai-repo
 
 git init
 git add .
-git commit -m "Add GeoAI planning intelligence framework and documentation"
+git commit -m "Add GeoAI planning intelligence framework and MkDocs documentation"
 git branch -M main
 git remote add origin https://github.com/desmond-lartey/Knowledge-Management-Informatics.git
 git push -u origin main
 ```
 
-If the repository already has content, either merge or force-push a fresh history:
+If the repository already has content and you intend to replace it:
 
 ```bash
-git push -u origin main --force   # only if you intend to replace existing content
+git push -u origin main --force
 ```
 
-## 2. Enable GitHub Pages
+## 2. Enable GitHub Pages via Actions
 
-Two options — the workflow-based build (recommended) or the simple branch-folder build.
-
-### Option A — Automatic build via Actions (recommended)
-
-The included workflow at `.github/workflows/pages.yml` builds the Jekyll site from `docs/` on every push.
+The documentation is built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) and deployed automatically by the workflow at `.github/workflows/deploy-docs.yml`.
 
 1. Go to your repository on GitHub.
-2. **Settings → Pages**.
-3. Under **Build and deployment → Source**, select **GitHub Actions**.
-4. Push any change to `docs/` (or trigger the workflow manually from the Actions tab).
-5. The site publishes to `https://desmond-lartey.github.io/Knowledge-Management-Informatics/`.
+2. **Settings -> Pages**.
+3. Under **Build and deployment -> Source**, select **GitHub Actions**.
+4. Push any change to `docs/` or `mkdocs.yml` — or trigger the workflow manually from the **Actions** tab.
+5. The site publishes to:
+   `https://desmond-lartey.github.io/Knowledge-Management-Informatics/`
 
-### Option B — Serve directly from the docs folder
+The first deployment takes two to three minutes. Subsequent pushes rebuild automatically.
 
-1. **Settings → Pages**.
-2. Under **Source**, select **Deploy from a branch**.
-3. Branch: `main`, folder: `/docs`.
-4. Save. The site builds automatically.
+## 3. Preview locally before pushing (optional)
 
-If you use Option B, GitHub Pages reads `docs/_config.yml` directly — no Actions workflow needed. You can delete `.github/workflows/pages.yml` in that case.
+```bash
+pip install mkdocs-material
+mkdocs serve
+```
 
-## 3. Verify the math renders
+Open `http://127.0.0.1:8000` to preview. Live-reloads as you edit. The site was verified to build cleanly in `--strict` mode, so `mkdocs build --strict` should pass without warnings.
 
-The documentation uses MathJax for equations (configured in `docs/_config.yml` via the kramdown `math_engine: mathjax` setting). After the site builds, open the [Indicators](https://desmond-lartey.github.io/Knowledge-Management-Informatics/indicators) page and confirm the formulas render as typeset mathematics rather than raw LaTeX.
+## 4. What the site includes
 
-If equations show as raw `$$...$$`, add this to the top of each docs page's front matter or include a MathJax script in the theme layout. The Cayman theme used here supports kramdown-mathjax out of the box for most content.
+The MkDocs Material configuration (`mkdocs.yml`) enables:
 
-## 4. Link from the paper
+- **Light and dark mode** with a toggle (teal primary, deep-orange accent).
+- **Instant navigation** and top-level tabs across the seven documentation pages.
+- **Full-text search** with suggestions and highlighting.
+- **Code copy buttons** on every code block.
+- **MathJax equation rendering** — every indicator formula renders as typeset mathematics (configured via `pymdownx.arithmatex` and `docs/javascripts/mathjax.js`).
+- **Edit-on-GitHub** links on each page.
 
-In the published article, cite the repository and documentation site:
+## 5. Link from the paper
 
-> Code and documentation: https://github.com/desmond-lartey/Knowledge-Management-Informatics
-> Documentation: https://desmond-lartey.github.io/Knowledge-Management-Informatics/
-
-Add these to a **Data and Code Availability** statement, for example:
+In the published article, cite the repository and documentation site. A ready-to-use **Data and Code Availability** statement:
 
 > The complete pipeline, indicator formulas, recommendation logic, validation
 > procedures, and reproduction guide are openly available at
@@ -65,12 +64,11 @@ Add these to a **Data and Code Availability** statement, for example:
 > browsable documentation at
 > https://desmond-lartey.github.io/Knowledge-Management-Informatics/.
 
-## 5. Add the sample data
+## 6. Add the sample data
 
 To let readers run the lightweight stages without the full national datasets, export a subset of your Alabama diagnostic output and commit it:
 
 ```bash
-# From your machine, copy a sample of the diagnostic CSV
 cp AL_urban_grid_results.csv data/sample/AL_urban_grid_results_sample.csv
 git add data/sample/AL_urban_grid_results_sample.csv
 git commit -m "Add sample diagnostic data for lightweight reproduction"
@@ -78,3 +76,20 @@ git push
 ```
 
 Readers can then run `src/sensitivity.py` and the recommendation logic directly against the sample.
+
+## Documentation structure
+
+```
+mkdocs.yml                       <- site configuration (repo root)
+docs/
+- index.md                       <- home
+- methodology.md                 <- five-stage pipeline
+- indicators.md                  <- every formula, disclosed
+- recommendation-logic.md        <- rule-based decision table
+- validation.md                  <- expert validation & reliability
+- sensitivity.md                 <- PQI weighting robustness
+- reproducibility.md             <- step-by-step reproduction
+- javascripts/mathjax.js         <- equation rendering config
+```
+
+To add a new page, create the markdown file in `docs/` and add it to the `nav:` block in `mkdocs.yml`.

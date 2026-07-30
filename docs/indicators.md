@@ -1,7 +1,3 @@
----
-title: Indicators
----
-
 # Indicators and Composite Indices
 
 This page discloses every formula used in the framework. Each indicator is computed per grid cell $i$. The framework operates on **three primary measurements** — building coverage, vegetation coverage, and road density — from which five perceptual indicators and two composite indices are derived. This structure is deliberate: the five indicators make three measurements interpretable in planning-relevant terms, rather than representing five independent constructs.
@@ -78,7 +74,7 @@ The five perceptual indicators are combined into a single composite via weighted
 
 $$PQI_i = 0.25\,G_i + 0.20\,O_i + 0.20\,(1 - E_i) + 0.20\,W_i + 0.15\,Im_i$$
 
-$PQI_i \in [0, 1]$, with higher values indicating more favourable urban morphological conditions. The weighting scheme is examined for robustness in [Sensitivity Analysis](sensitivity), where the spatial pattern is shown to be stable (Spearman ρ = 0.856–0.980) across alternative weightings.
+$PQI_i \in [0, 1]$, with higher values indicating more favourable urban morphological conditions. The weighting scheme is examined for robustness in [Sensitivity Analysis](sensitivity.md), where the spatial pattern is shown to be stable (Spearman ρ = 0.856–0.980) across alternative weightings.
 
 ## Risk indicators
 
@@ -106,7 +102,7 @@ $CURI_i \in [0, 1]$, with higher values indicating greater concentration of plan
 
 ## A note on internal consistency
 
-Because several indicators are algebraic transformations of a small number of underlying measurements (openness, enclosure, and imageability all derive from building coverage; greenness derives from vegetation coverage), strong correlations among them confirm the framework's computational design rather than providing independent construct validity. The correlation analysis in [Validation](validation) is therefore reported as a **computational consistency assessment**, not as construct validation. The framework's practical value rests on expert face validity and sensitivity robustness, both documented in the validation pages.
+Because several indicators are algebraic transformations of a small number of underlying measurements (openness, enclosure, and imageability all derive from building coverage; greenness derives from vegetation coverage), strong correlations among them confirm the framework's computational design rather than providing independent construct validity. The correlation analysis in [Validation](validation.md) is therefore reported as a **computational consistency assessment**, not as construct validation. The framework's practical value rests on expert face validity and sensitivity robustness, both documented in the validation pages.
 
 ## Summary table
 
