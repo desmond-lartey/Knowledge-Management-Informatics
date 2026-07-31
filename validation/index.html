@@ -1,0 +1,1121 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A Spatial Decision-Support Framework for Urban Governance — reproducible pipeline and documentation">
+      
+      
+        <meta name="author" content="Desmond Lartey, Kris M.Y. Law">
+      
+      
+        <link rel="canonical" href="https://desmond-lartey.github.io/Knowledge-Management-Informatics/validation/">
+      
+      
+        <link rel="prev" href="../recommendation-logic/">
+      
+      
+        <link rel="next" href="../sensitivity/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Validation - From GeoAI to Planning Intelligence</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#validation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="From GeoAI to Planning Intelligence" class="md-header__button md-logo" aria-label="From GeoAI to Planning Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            From GeoAI to Planning Intelligence
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Validation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/desmond-lartey/Knowledge-Management-Informatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    desmond-lartey/Knowledge-Management-Informatics
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../methodology/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Methodology
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../indicators/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Indicators & Formulas
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../recommendation-logic/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recommendation Logic
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Validation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sensitivity/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Sensitivity Analysis
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../reproducibility/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Reproducibility
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="From GeoAI to Planning Intelligence" class="md-nav__button md-logo" aria-label="From GeoAI to Planning Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    From GeoAI to Planning Intelligence
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/desmond-lartey/Knowledge-Management-Informatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    desmond-lartey/Knowledge-Management-Informatics
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../indicators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indicators & Formulas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recommendation-logic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommendation Logic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computational-consistency-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computational consistency assessment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expert-face-validity-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expert face validity assessment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expert face validity assessment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overall-acceptance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overall acceptance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category-level-agreement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category-level agreement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inter-rater-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inter-rater reliability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostic-coherence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnostic coherence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproducing-the-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproducing the validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sensitivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensitivity Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reproducibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reproducibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computational-consistency-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computational consistency assessment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expert-face-validity-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expert face validity assessment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Expert face validity assessment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overall-acceptance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overall acceptance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category-level-agreement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category-level agreement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inter-rater-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inter-rater reliability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostic-coherence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnostic coherence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproducing-the-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproducing the validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/desmond-lartey/Knowledge-Management-Informatics/edit/main/docs/validation.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h1>
+<p>The framework is validated along two independent dimensions: <strong>computational consistency</strong> — whether the composite indices behave as designed — and <strong>expert face validity</strong> — whether the resulting recommendations align with professional planning judgment. A third dimension, robustness to indicator weighting, is documented separately in <a href="../sensitivity/">Sensitivity Analysis</a>.</p>
+<h2 id="computational-consistency-assessment">Computational consistency assessment<a class="headerlink" href="#computational-consistency-assessment" title="Permanent link">&para;</a></h2>
+<p>This assessment verifies that the diagnostic indicators and composite indices behave consistently with their computational design. It is <strong>not</strong> an independent construct validation: several indicators are algebraic transformations of a small number of underlying measurements, so strong correlations among them reflect mathematical structure rather than independent empirical evidence. Reporting this transparently is itself part of the framework's commitment to auditability.</p>
+<p>The Pearson and Spearman correlation matrices across all 3,116 grid cells confirm the intended relationships:</p>
+<table>
+<thead>
+<tr>
+<th>Relationship</th>
+<th>Pearson r</th>
+<th>Spearman ρ</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Building coverage ↔ Enclosure</td>
+<td>≈ 1.00</td>
+<td>≈ 1.00</td>
+<td>Enclosure operationalised from building density</td>
+</tr>
+<tr>
+<td>Vegetation coverage ↔ Greenness</td>
+<td>≈ 1.00</td>
+<td>≈ 1.00</td>
+<td>Greenness derived from vegetative cover</td>
+</tr>
+<tr>
+<td>Road density ↔ Walkability</td>
+<td>0.98–0.99</td>
+<td>0.98–0.99</td>
+<td>Walkability incorporates road density</td>
+</tr>
+<tr>
+<td>Greenness ↔ Environmental degradation</td>
+<td>≈ −1.00</td>
+<td>≈ −1.00</td>
+<td>Complementary construct by definition</td>
+</tr>
+<tr>
+<td><strong>PQI ↔ Combined Risk Index</strong></td>
+<td><strong>−0.90</strong></td>
+<td><strong>−0.91</strong></td>
+<td>Risk declines as perceptual quality improves</td>
+</tr>
+</tbody>
+</table>
+<p>The strong negative PQI–risk relationship is the most substantively meaningful result. It confirms that the integrated risk metric consistently declines as perceptual and environmental quality improve, demonstrating that the framework's composite indices behave in a theoretically consistent and non-contradictory manner. Because several risk indicators are constructed partly as inverses of PQI components, this relationship is partly structural by design — it is reported as evidence of internal coherence, not as independent confirmation of validity.</p>
+<h2 id="expert-face-validity-assessment">Expert face validity assessment<a class="headerlink" href="#expert-face-validity-assessment" title="Permanent link">&para;</a></h2>
+<p>Eight planning professionals independently evaluated 20 grid cells randomly sampled from the full Alabama diagnostic dataset. Sampling used a fixed random seed (42) so that all eight experts assessed identical cells, enabling inter-rater reliability analysis.</p>
+<h3 id="design">Design<a class="headerlink" href="#design" title="Permanent link">&para;</a></h3>
+<p>Each expert received a standardised rating package: the sampled cells with their full indicator profiles and model-generated recommendations, written rating instructions defining a five-point Likert scale, category-level guidance for each recommendation type, and a professional qualification form. Experts rated whether each recommendation was appropriate given the diagnostic conditions of its cell:</p>
+<ul>
+<li><strong>1</strong> — Strongly disagree (recommendation inappropriate or misleading)</li>
+<li><strong>2</strong> — Disagree (unlikely to be useful in practice)</li>
+<li><strong>3</strong> — Neutral (plausible but with significant reservations)</li>
+<li><strong>4</strong> — Agree (appropriate given the diagnostic evidence)</li>
+<li><strong>5</strong> — Strongly agree (clearly appropriate and governance-relevant)</li>
+</ul>
+<p>Experts selecting a neutral rating were asked to document their reservations, enabling qualitative analysis of where and why disagreement arises. Ratings of 4–5 were classified as accepted, 3 as neutral, and 1–2 as rejected.</p>
+<h3 id="overall-acceptance">Overall acceptance<a class="headerlink" href="#overall-acceptance" title="Permanent link">&para;</a></h3>
+<p>Across 160 ratings (8 experts × 20 cells):</p>
+<table>
+<thead>
+<tr>
+<th>Outcome</th>
+<th>Proportion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accepted (Likert ≥ 4)</td>
+<td>81.9%</td>
+</tr>
+<tr>
+<td>Neutral (Likert = 3)</td>
+<td>15.0%</td>
+</tr>
+<tr>
+<td>Rejected (Likert ≤ 2)</td>
+<td>3.1%</td>
+</tr>
+<tr>
+<td>Mean rating</td>
+<td>4.13</td>
+</tr>
+</tbody>
+</table>
+<p>This acceptance rate confirms that the framework's recommendation logic is broadly aligned with professional planning judgment.</p>
+<h3 id="category-level-agreement">Category-level agreement<a class="headerlink" href="#category-level-agreement" title="Permanent link">&para;</a></h3>
+<p>Acceptance varied systematically across recommendation categories. Connectivity and active-travel interventions received the highest and most consistent endorsement, particularly in cells with low walkability and high infrastructure deficiency where the diagnostic rationale is clearest. Maintain-and-monitor recommendations showed the greatest variation, with neutral responses concentrated in cells of moderate risk where intervention urgency is genuinely ambiguous. The single integrated recommendation — cell 10, the sample's highest-risk and lowest-quality cell — received unanimous strong agreement from all eight experts (mean = 5.0, SD = 0.0), confirming that where diagnostic evidence is unambiguous, expert consensus follows.</p>
+<h3 id="inter-rater-reliability">Inter-rater reliability<a class="headerlink" href="#inter-rater-reliability" title="Permanent link">&para;</a></h3>
+<p>Inter-rater reliability was assessed using Krippendorff's alpha on ordinal ratings across all eight experts:</p>
+<table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Krippendorff α (ordinal)</td>
+<td>0.252</td>
+</tr>
+<tr>
+<td>Mean pairwise Spearman ρ</td>
+<td>0.264</td>
+</tr>
+</tbody>
+</table>
+<p>These values reflect low but non-trivial agreement, consistent with the inherently context-dependent nature of planning judgment. The reliability figures are reported transparently rather than smoothed over. Critically, disagreement is <strong>systematic rather than random</strong> — it concentrates in two identifiable cell types:</p>
+<ol>
+<li><strong>High-greenness, zero-road-density cells</strong>, where experts differ on whether the spatial profile indicates a connectivity deficiency requiring intervention or periurban open space outside the intervention logic.</li>
+<li><strong>Borderline maintain cases</strong>, where combined risk falls close to the intervention threshold and professional judgment is genuinely divided.</li>
+</ol>
+<p>This clustering is analytically important. It identifies precisely the spatial conditions where AI-generated recommendations require the greatest professional scrutiny — which is exactly the governance role the framework is designed to support. The framework structures deliberation in ambiguous cases rather than replacing it. The low inter-rater agreement in these cases is therefore consistent with, not contradictory to, the framework's governance design logic.</p>
+<h2 id="diagnostic-coherence">Diagnostic coherence<a class="headerlink" href="#diagnostic-coherence" title="Permanent link">&para;</a></h2>
+<p>Indicator profiles of expert-reviewed cells grouped by recommendation category confirm that the framework assigns recommendations in ways that are internally coherent and professionally legible. Cells assigned connectivity interventions consistently show high infrastructure deficiency and low walkability; greening-oriented recommendations correspond to high environmental degradation and reduced greenness; maintain-and-monitor cells cluster around intermediate values. This coherence between indicator profiles and recommendation categories demonstrates that a planner encountering any recommendation can locate precisely which indicator is driving it.</p>
+<h2 id="reproducing-the-validation">Reproducing the validation<a class="headerlink" href="#reproducing-the-validation" title="Permanent link">&para;</a></h2>
+<p>The validation materials — the expert rating template, instructions, and scoring code — are provided in the <code>validation/</code> directory and the pipeline notebook. The expert rating sheets are distributed with an empty rating column for professionals to complete; the scoring code computes acceptance rates, category-level agreement, Krippendorff's alpha, and inter-rater Spearman correlations once completed sheets are returned. See <a href="../reproducibility/">Reproducibility</a> for the full procedure.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../recommendation-logic/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Recommendation Logic">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Recommendation Logic
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../sensitivity/" class="md-footer__link md-footer__link--next" aria-label="Next: Sensitivity Analysis">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Sensitivity Analysis
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Desmond Lartey, Kris M.Y. Law — MIT License
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/desmond-lartey/Knowledge-Management-Informatics" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

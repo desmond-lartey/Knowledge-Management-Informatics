@@ -1,0 +1,1410 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A Spatial Decision-Support Framework for Urban Governance — reproducible pipeline and documentation">
+      
+      
+        <meta name="author" content="Desmond Lartey, Kris M.Y. Law">
+      
+      
+        <link rel="canonical" href="https://desmond-lartey.github.io/Knowledge-Management-Informatics/indicators/">
+      
+      
+        <link rel="prev" href="../methodology/">
+      
+      
+        <link rel="next" href="../recommendation-logic/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Indicators & Formulas - From GeoAI to Planning Intelligence</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#indicators-and-composite-indices" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="From GeoAI to Planning Intelligence" class="md-header__button md-logo" aria-label="From GeoAI to Planning Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            From GeoAI to Planning Intelligence
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Indicators & Formulas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/desmond-lartey/Knowledge-Management-Informatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    desmond-lartey/Knowledge-Management-Informatics
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../methodology/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Methodology
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Indicators & Formulas
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../recommendation-logic/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recommendation Logic
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../validation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Validation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sensitivity/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Sensitivity Analysis
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../reproducibility/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Reproducibility
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="From GeoAI to Planning Intelligence" class="md-nav__button md-logo" aria-label="From GeoAI to Planning Intelligence" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    From GeoAI to Planning Intelligence
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/desmond-lartey/Knowledge-Management-Informatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    desmond-lartey/Knowledge-Management-Informatics
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indicators & Formulas
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indicators & Formulas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#primary-measurements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary measurements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primary measurements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vegetation-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vegetation coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#road-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Road density
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perceptual-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perceptual indicators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Perceptual indicators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#greenness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Greenness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Openness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enclosure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#walkability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Walkability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imageability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imageability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perceptual-quality-index-pqi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perceptual Quality Index (PQI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk indicators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk indicators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sprawl-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprawl score
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environmental-degradation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environmental degradation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-deficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure deficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combined-urban-risk-index-curi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combined Urban Risk Index (CURI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-note-on-internal-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A note on internal consistency
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary table
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recommendation-logic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommendation Logic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sensitivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensitivity Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reproducibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reproducibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#primary-measurements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary measurements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primary measurements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vegetation-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vegetation coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#road-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Road density
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perceptual-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perceptual indicators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Perceptual indicators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#greenness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Greenness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Openness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enclosure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#walkability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Walkability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imageability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imageability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perceptual-quality-index-pqi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perceptual Quality Index (PQI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk indicators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Risk indicators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sprawl-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprawl score
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environmental-degradation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environmental degradation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-deficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure deficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combined-urban-risk-index-curi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combined Urban Risk Index (CURI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-note-on-internal-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A note on internal consistency
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary table
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/desmond-lartey/Knowledge-Management-Informatics/edit/main/docs/indicators.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="indicators-and-composite-indices">Indicators and Composite Indices<a class="headerlink" href="#indicators-and-composite-indices" title="Permanent link">&para;</a></h1>
+<p>This page discloses every formula used in the framework. Each indicator is computed per grid cell <span class="arithmatex">\(i\)</span>. The framework operates on <strong>three primary measurements</strong> — building coverage, vegetation coverage, and road density — from which five perceptual indicators and two composite indices are derived. This structure is deliberate: the five indicators make three measurements interpretable in planning-relevant terms, rather than representing five independent constructs.</p>
+<h2 id="primary-measurements">Primary measurements<a class="headerlink" href="#primary-measurements" title="Permanent link">&para;</a></h2>
+<h3 id="building-coverage">Building coverage<a class="headerlink" href="#building-coverage" title="Permanent link">&para;</a></h3>
+<p>The proportion of pixels classified as built structures within a cell:</p>
+<div class="arithmatex">\[BC_i = \frac{\sum_{p \in G_i} \mathbf{1}[\hat{y}_p = 1]}{|G_i|}\]</div>
+<p>where <span class="arithmatex">\(G_i\)</span> is the set of pixels in cell <span class="arithmatex">\(i\)</span>, <span class="arithmatex">\(\hat{y}_p = 1\)</span> denotes a pixel classified as building by the segmentation model, and <span class="arithmatex">\(|G_i|\)</span> is the total pixel count of the cell.</p>
+<h3 id="vegetation-coverage">Vegetation coverage<a class="headerlink" href="#vegetation-coverage" title="Permanent link">&para;</a></h3>
+<p>Derived from the Normalised Difference Vegetation Index (NDVI):</p>
+<div class="arithmatex">\[VC_i = \frac{1}{|G_i|} \sum_{p \in G_i} \mathbf{1}\!\left[\frac{NIR_p - R_p}{NIR_p + R_p} &gt; 0.2\right]\]</div>
+<p>where <span class="arithmatex">\(NIR_p\)</span> and <span class="arithmatex">\(R_p\)</span> are the near-infrared and red band values at pixel <span class="arithmatex">\(p\)</span>. Where near-infrared bands are unavailable, an excess-green proxy is used instead.</p>
+<h3 id="road-density">Road density<a class="headerlink" href="#road-density" title="Permanent link">&para;</a></h3>
+<p>The total length of drivable road segments intersecting a cell, normalised by cell area:</p>
+<div class="arithmatex">\[RD_i = \frac{\sum_{e \in E_i} l_e}{A_i}\]</div>
+<p>where <span class="arithmatex">\(E_i\)</span> is the set of road segments (from OpenStreetMap) intersecting cell <span class="arithmatex">\(i\)</span>, <span class="arithmatex">\(l_e\)</span> is the length of segment <span class="arithmatex">\(e\)</span> clipped to the cell, and <span class="arithmatex">\(A_i\)</span> is the cell area in km². Road density is expressed in km/km² and computed in a metric (UTM) coordinate reference system.</p>
+<h2 id="normalisation">Normalisation<a class="headerlink" href="#normalisation" title="Permanent link">&para;</a></h2>
+<p>All raw indicators are min-max normalised before compositing, ensuring comparability across cells and preventing any single indicator from dominating an index:</p>
+<div class="arithmatex">\[\tilde{x}_i = \frac{x_i - \min(x)}{\max(x) - \min(x)}\]</div>
+<h2 id="perceptual-indicators">Perceptual indicators<a class="headerlink" href="#perceptual-indicators" title="Permanent link">&para;</a></h2>
+<p>The five perceptual indicators are morphological proxies. Each is derived from the primary measurements above.</p>
+<h3 id="greenness">Greenness<a class="headerlink" href="#greenness" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[G_i = \widetilde{VC}_i\]</div>
+<p>Greenness is the normalised vegetation coverage — a proxy for the environmental greenness conditions the perception literature associates with urban quality.</p>
+<h3 id="openness">Openness<a class="headerlink" href="#openness" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[O_i = 1 - BC_i\]</div>
+<p>Openness is inverse building coverage — a morphological proxy for visual permeability and freedom from built-form obstruction.</p>
+<h3 id="enclosure">Enclosure<a class="headerlink" href="#enclosure" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[E_i = BC_i\]</div>
+<p>Enclosure is building coverage — a proxy for the degree to which space is bounded by structures.</p>
+<h3 id="walkability">Walkability<a class="headerlink" href="#walkability" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[W_i = \widetilde{RD}_i \times (1 - \widetilde{E}_i)\]</div>
+<p>Walkability combines normalised road density with inverse normalised enclosure — a network- and morphology-based proxy for how the spatial form supports pedestrian movement.</p>
+<h3 id="imageability">Imageability<a class="headerlink" href="#imageability" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[Im_i = \widetilde{\sqrt{BC_i}}\]</div>
+<p>Imageability is the normalised square root of building coverage — a proxy for the built intensity and spatial presence that create morphological distinctiveness.</p>
+<h2 id="perceptual-quality-index-pqi">Perceptual Quality Index (PQI)<a class="headerlink" href="#perceptual-quality-index-pqi" title="Permanent link">&para;</a></h2>
+<p>The five perceptual indicators are combined into a single composite via weighted linear aggregation:</p>
+<div class="arithmatex">\[PQI_i = 0.25\,G_i + 0.20\,O_i + 0.20\,(1 - E_i) + 0.20\,W_i + 0.15\,Im_i\]</div>
+<p><span class="arithmatex">\(PQI_i \in [0, 1]\)</span>, with higher values indicating more favourable urban morphological conditions. The weighting scheme is examined for robustness in <a href="../sensitivity/">Sensitivity Analysis</a>, where the spatial pattern is shown to be stable (Spearman ρ = 0.856–0.980) across alternative weightings.</p>
+<h2 id="risk-indicators">Risk indicators<a class="headerlink" href="#risk-indicators" title="Permanent link">&para;</a></h2>
+<p>Three risk indicators quantify conditions relevant for planning intervention.</p>
+<h3 id="sprawl-score">Sprawl score<a class="headerlink" href="#sprawl-score" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\text{Sprawl}_i = 1 - PQI_i\]</div>
+<h3 id="environmental-degradation">Environmental degradation<a class="headerlink" href="#environmental-degradation" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\text{EnvDeg}_i = 1 - G_i\]</div>
+<h3 id="infrastructure-deficiency">Infrastructure deficiency<a class="headerlink" href="#infrastructure-deficiency" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[\text{InfraDef}_i = (1 - \widetilde{RD}_i) \times (1 - W_i)\]</div>
+<h2 id="combined-urban-risk-index-curi">Combined Urban Risk Index (CURI)<a class="headerlink" href="#combined-urban-risk-index-curi" title="Permanent link">&para;</a></h2>
+<p>The three risk indicators are combined into a single composite:</p>
+<div class="arithmatex">\[CURI_i = 0.4\,\text{Sprawl}_i + 0.3\,\text{EnvDeg}_i + 0.3\,\text{InfraDef}_i\]</div>
+<p><span class="arithmatex">\(CURI_i \in [0, 1]\)</span>, with higher values indicating greater concentration of planning-relevant urban problems.</p>
+<h2 id="a-note-on-internal-consistency">A note on internal consistency<a class="headerlink" href="#a-note-on-internal-consistency" title="Permanent link">&para;</a></h2>
+<p>Because several indicators are algebraic transformations of a small number of underlying measurements (openness, enclosure, and imageability all derive from building coverage; greenness derives from vegetation coverage), strong correlations among them confirm the framework's computational design rather than providing independent construct validity. The correlation analysis in <a href="../validation/">Validation</a> is therefore reported as a <strong>computational consistency assessment</strong>, not as construct validation. The framework's practical value rests on expert face validity and sensitivity robustness, both documented in the validation pages.</p>
+<h2 id="summary-table">Summary table<a class="headerlink" href="#summary-table" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Indicator</th>
+<th>Symbol</th>
+<th>Derived from</th>
+<th>Computation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Building coverage</td>
+<td><span class="arithmatex">\(BC\)</span></td>
+<td>Segmentation mask</td>
+<td>Proportion of building pixels</td>
+</tr>
+<tr>
+<td>Vegetation coverage</td>
+<td><span class="arithmatex">\(VC\)</span></td>
+<td>NAIP imagery</td>
+<td>Proportion of NDVI &gt; 0.2</td>
+</tr>
+<tr>
+<td>Road density</td>
+<td><span class="arithmatex">\(RD\)</span></td>
+<td>OpenStreetMap</td>
+<td>Road length / cell area</td>
+</tr>
+<tr>
+<td>Greenness</td>
+<td><span class="arithmatex">\(G\)</span></td>
+<td><span class="arithmatex">\(VC\)</span></td>
+<td>Min-max normalised</td>
+</tr>
+<tr>
+<td>Openness</td>
+<td><span class="arithmatex">\(O\)</span></td>
+<td><span class="arithmatex">\(BC\)</span></td>
+<td><span class="arithmatex">\(1 - BC\)</span></td>
+</tr>
+<tr>
+<td>Enclosure</td>
+<td><span class="arithmatex">\(E\)</span></td>
+<td><span class="arithmatex">\(BC\)</span></td>
+<td><span class="arithmatex">\(BC\)</span></td>
+</tr>
+<tr>
+<td>Walkability</td>
+<td><span class="arithmatex">\(W\)</span></td>
+<td><span class="arithmatex">\(RD\)</span>, <span class="arithmatex">\(E\)</span></td>
+<td><span class="arithmatex">\(\widetilde{RD} \times (1 - \widetilde{E})\)</span></td>
+</tr>
+<tr>
+<td>Imageability</td>
+<td><span class="arithmatex">\(Im\)</span></td>
+<td><span class="arithmatex">\(BC\)</span></td>
+<td><span class="arithmatex">\(\widetilde{\sqrt{BC}}\)</span></td>
+</tr>
+<tr>
+<td>Perceptual Quality Index</td>
+<td><span class="arithmatex">\(PQI\)</span></td>
+<td>All perceptual</td>
+<td>Weighted aggregation</td>
+</tr>
+<tr>
+<td>Sprawl</td>
+<td>—</td>
+<td><span class="arithmatex">\(PQI\)</span></td>
+<td><span class="arithmatex">\(1 - PQI\)</span></td>
+</tr>
+<tr>
+<td>Environmental degradation</td>
+<td>—</td>
+<td><span class="arithmatex">\(G\)</span></td>
+<td><span class="arithmatex">\(1 - G\)</span></td>
+</tr>
+<tr>
+<td>Infrastructure deficiency</td>
+<td>—</td>
+<td><span class="arithmatex">\(RD\)</span>, <span class="arithmatex">\(W\)</span></td>
+<td><span class="arithmatex">\((1-\widetilde{RD})(1-W)\)</span></td>
+</tr>
+<tr>
+<td>Combined Urban Risk Index</td>
+<td><span class="arithmatex">\(CURI\)</span></td>
+<td>All risk</td>
+<td>Weighted aggregation</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../methodology/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Methodology">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Methodology
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../recommendation-logic/" class="md-footer__link md-footer__link--next" aria-label="Next: Recommendation Logic">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Recommendation Logic
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Desmond Lartey, Kris M.Y. Law — MIT License
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/desmond-lartey/Knowledge-Management-Informatics" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
