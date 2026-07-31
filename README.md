@@ -2,9 +2,13 @@
 
 **A Spatial Decision-Support Framework for Urban Governance**
 
-[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://desmond-lartey.github.io/Knowledge-Management-Informatics/)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+<p align="center">
+  <a href="https://github.com/desmond-lartey/Knowledge-Management-Informatics/blob/Fires/LICENSE" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/license/desmond-lartey/Knowledge-Management-Informatics" alt="License"></a>
+  <a href="https://github.com/desmond-lartey/Knowledge-Management-Informatics/stargazers" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/stars/desmond-lartey/Knowledge-Management-Informatics?style=social" alt="Stars"></a>
+  <a href="https://github.com/desmond-lartey/Knowledge-Management-Informatics/network/members" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/github/forks/desmond-lartey/Knowledge-Management-Informatics?style=social" alt="Forks"></a>
+  <a href="https://www.youtube.com/@desmondlartey31" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/YouTube-Tutorials-red" alt="YouTube"></a>
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=desmond-lartey.Knowledge-Management-Informatics" alt="Visitors">
+</p>
 
 This repository contains the complete, reproducible pipeline for the study *"GeoAI to Planning Intelligence: A Spatial Decision-Support Framework for Urban Governance"* by Desmond Lartey and Kris M.Y. Law. It translates high-resolution aerial imagery into interpretable spatial diagnostics and planning recommendations that align with professional governance judgment.
 
