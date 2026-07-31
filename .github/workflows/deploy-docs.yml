@@ -2,9 +2,7 @@ name: Deploy MkDocs to gh-pages
 
 on:
   push:
-    branches:
-      - main
-      - Fires
+    branches: [Fires]
   workflow_dispatch:
 
 permissions:
