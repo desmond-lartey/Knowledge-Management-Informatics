@@ -8,4 +8,3 @@ site/
 .DS_Store
 .env
 venv/
-extras/
