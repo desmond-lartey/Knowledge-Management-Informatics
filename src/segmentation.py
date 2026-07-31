@@ -11,7 +11,7 @@ Covers three operations from the paper's Stage 2 (Semantic Segmentation):
 The model produces BINARY BUILDING MASKS ONLY. Road networks are obtained
 independently from OpenStreetMap (see spatial_aggregation.py).
 
-Reference: Lartey & Law, "GeoAI to Planning Intelligence".
+Reference: Lartey & Law, "From GeoAI to Planning Intelligence".
 """
 
 import os

@@ -1,4 +1,4 @@
-# GeoAI to Planning Intelligence
+# From GeoAI to Planning Intelligence
 
 **A Spatial Decision-Support Framework for Urban Governance**
 
@@ -6,7 +6,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-This repository contains the complete, reproducible pipeline for the study *"GeoAI to Planning Intelligence: A Spatial Decision-Support Framework for Urban Governance"* by Desmond Lartey and Kris M.Y. Law. It translates high-resolution aerial imagery into interpretable spatial diagnostics and planning recommendations that align with professional governance judgment.
+This repository contains the complete, reproducible pipeline for the study *"From GeoAI to Planning Intelligence: A Spatial Decision-Support Framework for Urban Governance"* by Desmond Lartey and Kris M.Y. Law. It translates high-resolution aerial imagery into interpretable spatial diagnostics and planning recommendations that align with professional governance judgment.
 
 The framework moves GeoAI beyond pixel-level classification toward governance-relevant decision support by integrating five stages into a single pipeline: semantic segmentation of the built environment, grid-based spatial aggregation, perceptual and functional indicator computation, composite index construction, and rule-based recommendation generation. Every stage is auditable, every indicator is disclosed, and every recommendation can be traced from input to output.
 
@@ -18,7 +18,7 @@ Given aerial imagery and building footprint data for an urban area, the pipeline
 
 - A **U-Net segmentation model** that classifies built structures from NAIP aerial imagery, evaluated with standard metrics (IoU = 0.477, F1 = 0.646, Precision = 0.570, Recall = 0.746, Accuracy = 0.805 on held-out validation).
 - A **100-metre spatial grid** in which each cell carries building coverage, vegetation coverage, and road density derived from the imagery and OpenStreetMap.
-- Five **perceptual indicators**, greenness, openness, enclosure, walkability, imageability, computed as morphological proxies from overhead data.
+- Five **perceptual indicators** — greenness, openness, enclosure, walkability, imageability — computed as morphological proxies from overhead data.
 - A **Perceptual Quality Index (PQI)** and a **Combined Urban Risk Index (CURI)** synthesising these indicators into composite diagnostics.
 - **Rule-based planning recommendations** across four intervention categories, generated from transparent threshold logic.
 - A **validation suite** producing expert face-validity statistics, inter-rater reliability, and indicator-weighting sensitivity analysis.
@@ -106,7 +106,7 @@ If you use this framework, please cite:
 
 ```bibtex
 @article{lartey_geoai_planning_intelligence,
-  title   = {GeoAI to Planning Intelligence: A Spatial Decision-Support Framework for Urban Governance},
+  title   = {From GeoAI to Planning Intelligence: A Spatial Decision-Support Framework for Urban Governance},
   author  = {Lartey, Desmond and Law, Kris M. Y.},
   year    = {2026},
   note    = {Manuscript under review}
@@ -119,9 +119,8 @@ See [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata.
 
 ## Related work
 
-This study is part of a cluster of research on artificial intelligence in urban governance, what is currently termed as "AI Urbanism":
+This study is part of a research programme on artificial intelligence in urban governance:
 
-- Lartey, D., & Law, K. (2024). A proposed methodology for intelligent decision-making in smart cities and urban planning. Development, 23, 25.
 - Lartey, D., & Law, K. M. Y. (2025). Artificial intelligence adoption in urban planning governance: A systematic review. *Landscape and Urban Planning*, 258, 105337.
 - Lartey, D., & Law, K. M. Y. (2026). Governing with artificial intelligence: Mapping the knowledge systems shaping urban intelligence. *Technology in Society*, 86, 103321.
 
@@ -133,4 +132,5 @@ Released under the MIT License. See [`LICENSE`](LICENSE) for details.
 
 ## Contact
 
-Desmond Lartey, larteydesmond3@gmail.com
+Desmond Lartey — larteydesmond3@gmail.com
+International School for Social and Business Studies (ISSBS), Celje, Slovenia

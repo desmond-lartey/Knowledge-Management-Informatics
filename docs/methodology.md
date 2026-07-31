@@ -59,5 +59,5 @@ Because the logic is rule-based and every threshold is disclosed, a planner enco
 The framework is assessed along three dimensions, detailed in [Validation](validation.md) and [Sensitivity Analysis](sensitivity.md):
 
 1. **Computational consistency** — correlation analysis confirming that the composite indices behave as designed.
-2. **Expert face validity** — planning professionals assessing the governance realism of recommendations across 20 randomly sampled cells.
+2. **Expert face validity** — eight planning professionals assessing the governance realism of recommendations across 20 randomly sampled cells.
 3. **Sensitivity** — testing whether the PQI spatial pattern is robust to alternative indicator weighting schemes.
