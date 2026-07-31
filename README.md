@@ -120,7 +120,7 @@ See [`CITATION.cff`](CITATION.cff) for machine-readable citation metadata.
 ## Related work
 
 This study is part of a research programme on artificial intelligence in urban governance:
-
+- Lartey, D., & Law, K. (2024). A proposed methodology for intelligent decision-making in smart cities and urban planning. Development, 23, 25.
 - Lartey, D., & Law, K. M. Y. (2025). Artificial intelligence adoption in urban planning governance: A systematic review. *Landscape and Urban Planning*, 258, 105337.
 - Lartey, D., & Law, K. M. Y. (2026). Governing with artificial intelligence: Mapping the knowledge systems shaping urban intelligence. *Technology in Society*, 86, 103321.
 

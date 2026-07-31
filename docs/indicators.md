@@ -102,7 +102,7 @@ $CURI_i \in [0, 1]$, with higher values indicating greater concentration of plan
 
 ## A note on internal consistency
 
-Because several indicators are algebraic transformations of a small number of underlying measurements (openness, enclosure, and imageability all derive from building coverage; greenness derives from vegetation coverage), strong correlations among them confirm the framework's computational design rather than providing independent construct validity. The correlation analysis in [Validation](validation.md) is therefore reported as a **computational consistency assessment**, not as construct validation. The framework's practical value rests on expert face validity and sensitivity robustness, both documented in the validation pages.
+Because several indicators are algebraic transformations of a small number of underlying measurements (openness, enclosure, and imageability all derive from building coverage; greenness derives from vegetation coverage), strong correlations among them confirm the framework's computational design rather than providing independent construct validity. The correlation analysis in [Validation](validation.md) is therefore reported as a **computational consistency assessment**. The framework's practical value rests on expert face validity and sensitivity robustness, both documented in the validation pages.
 
 ## Summary table
 

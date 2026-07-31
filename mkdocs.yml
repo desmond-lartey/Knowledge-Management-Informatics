@@ -1,9 +1,9 @@
 site_name: GeoAI to Planning Intelligence
-site_description: A Spatial Decision-Support Framework for Urban Governance — reproducible pipeline and documentation
+site_description: A Spatial Decision-Support Framework for Urban Governance
 site_author: Desmond Lartey, Kris M.Y. Law
 site_url: https://desmond-lartey.github.io/Knowledge-Management-Informatics/
 
-repo_name: desmond-lartey/Knowledge-Management-Informatics
+repo_name: GitHub
 repo_url: https://github.com/desmond-lartey/Knowledge-Management-Informatics
 edit_uri: edit/main/docs/
 
@@ -12,20 +12,23 @@ docs_dir: docs
 theme:
   name: material
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: teal
-      accent: teal
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to dark mode
+    # Dark mode (Default)
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: teal
       accent: teal
       toggle:
-        icon: material/weather-night
+        icon: material/weather-sunny
         name: Switch to light mode
+
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
   features:
     - navigation.instant
     - navigation.tracking
