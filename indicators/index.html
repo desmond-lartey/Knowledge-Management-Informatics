@@ -999,7 +999,7 @@
 
 
 <h1 id="indicators-and-composite-indices">Indicators and Composite Indices<a class="headerlink" href="#indicators-and-composite-indices" title="Permanent link">&para;</a></h1>
-<p>This page discloses every formula used in the framework. Each indicator is computed per grid cell <span class="arithmatex">\(i\)</span>. The framework operates on <strong>three primary measurements</strong> — building coverage, vegetation coverage, and road density — from which five perceptual indicators and two composite indices are derived. This structure is deliberate: the five indicators make three measurements interpretable in planning-relevant terms, rather than representing five independent constructs.</p>
+<p>This page discloses every formula used in the framework. Each indicator is computed per grid cell <span class="arithmatex">\(i\)</span>. The framework operates on <strong>three primary measurements</strong> , building coverage, vegetation coverage, and road density , from which five perceptual indicators and two composite indices are derived. This structure is deliberate: the five indicators make three measurements interpretable in planning-relevant terms, rather than representing five independent constructs.</p>
 <h2 id="primary-measurements">Primary measurements<a class="headerlink" href="#primary-measurements" title="Permanent link">&para;</a></h2>
 <h3 id="building-coverage">Building coverage<a class="headerlink" href="#building-coverage" title="Permanent link">&para;</a></h3>
 <p>The proportion of pixels classified as built structures within a cell:</p>
@@ -1020,19 +1020,19 @@
 <p>The five perceptual indicators are morphological proxies. Each is derived from the primary measurements above.</p>
 <h3 id="greenness">Greenness<a class="headerlink" href="#greenness" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[G_i = \widetilde{VC}_i\]</div>
-<p>Greenness is the normalised vegetation coverage — a proxy for the environmental greenness conditions the perception literature associates with urban quality.</p>
+<p>Greenness is the normalised vegetation coverage , a proxy for the environmental greenness conditions the perception literature associates with urban quality.</p>
 <h3 id="openness">Openness<a class="headerlink" href="#openness" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[O_i = 1 - BC_i\]</div>
-<p>Openness is inverse building coverage — a morphological proxy for visual permeability and freedom from built-form obstruction.</p>
+<p>Openness is inverse building coverage , a morphological proxy for visual permeability and freedom from built-form obstruction.</p>
 <h3 id="enclosure">Enclosure<a class="headerlink" href="#enclosure" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[E_i = BC_i\]</div>
-<p>Enclosure is building coverage — a proxy for the degree to which space is bounded by structures.</p>
+<p>Enclosure is building coverage , a proxy for the degree to which space is bounded by structures.</p>
 <h3 id="walkability">Walkability<a class="headerlink" href="#walkability" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[W_i = \widetilde{RD}_i \times (1 - \widetilde{E}_i)\]</div>
-<p>Walkability combines normalised road density with inverse normalised enclosure — a network- and morphology-based proxy for how the spatial form supports pedestrian movement.</p>
+<p>Walkability combines normalised road density with inverse normalised enclosure , a network- and morphology-based proxy for how the spatial form supports pedestrian movement.</p>
 <h3 id="imageability">Imageability<a class="headerlink" href="#imageability" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[Im_i = \widetilde{\sqrt{BC_i}}\]</div>
-<p>Imageability is the normalised square root of building coverage — a proxy for the built intensity and spatial presence that create morphological distinctiveness.</p>
+<p>Imageability is the normalised square root of building coverage , a proxy for the built intensity and spatial presence that create morphological distinctiveness.</p>
 <h2 id="perceptual-quality-index-pqi">Perceptual Quality Index (PQI)<a class="headerlink" href="#perceptual-quality-index-pqi" title="Permanent link">&para;</a></h2>
 <p>The five perceptual indicators are combined into a single composite via weighted linear aggregation:</p>
 <div class="arithmatex">\[PQI_i = 0.25\,G_i + 0.20\,O_i + 0.20\,(1 - E_i) + 0.20\,W_i + 0.15\,Im_i\]</div>
@@ -1118,19 +1118,19 @@
 </tr>
 <tr>
 <td>Sprawl</td>
-<td>—</td>
+<td>,</td>
 <td><span class="arithmatex">\(PQI\)</span></td>
 <td><span class="arithmatex">\(1 - PQI\)</span></td>
 </tr>
 <tr>
 <td>Environmental degradation</td>
-<td>—</td>
+<td>,</td>
 <td><span class="arithmatex">\(G\)</span></td>
 <td><span class="arithmatex">\(1 - G\)</span></td>
 </tr>
 <tr>
 <td>Infrastructure deficiency</td>
-<td>—</td>
+<td>,</td>
 <td><span class="arithmatex">\(RD\)</span>, <span class="arithmatex">\(W\)</span></td>
 <td><span class="arithmatex">\((1-\widetilde{RD})(1-W)\)</span></td>
 </tr>

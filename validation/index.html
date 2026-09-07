@@ -733,7 +733,7 @@
 
 
 <h1 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h1>
-<p>The framework is validated along two independent dimensions: <strong>computational consistency</strong> — whether the composite indices behave as designed — and <strong>expert face validity</strong> — whether the resulting recommendations align with professional planning judgment. A third dimension, robustness to indicator weighting, is documented separately in <a href="../sensitivity/">Sensitivity Analysis</a>.</p>
+<p>The framework is validated along two independent dimensions: <strong>computational consistency</strong> , whether the composite indices behave as designed , and <strong>expert face validity</strong> , whether the resulting recommendations align with professional planning judgment. A third dimension, robustness to indicator weighting, is documented separately in <a href="../sensitivity/">Sensitivity Analysis</a>.</p>
 <h2 id="computational-consistency-assessment">Computational consistency assessment<a class="headerlink" href="#computational-consistency-assessment" title="Permanent link">&para;</a></h2>
 <p>This assessment verifies that the diagnostic indicators and composite indices behave consistently with their computational design. It is <strong>not</strong> an independent construct validation: several indicators are algebraic transformations of a small number of underlying measurements, so strong correlations among them reflect mathematical structure rather than independent empirical evidence. Reporting this transparently is itself part of the framework's commitment to auditability.</p>
 <p>The Pearson and Spearman correlation matrices across all 3,116 grid cells confirm the intended relationships:</p>
@@ -779,17 +779,17 @@
 </tr>
 </tbody>
 </table>
-<p>The strong negative PQI–risk relationship is the most substantively meaningful result. It confirms that the integrated risk metric consistently declines as perceptual and environmental quality improve, demonstrating that the framework's composite indices behave in a theoretically consistent and non-contradictory manner. Because several risk indicators are constructed partly as inverses of PQI components, this relationship is partly structural by design — it is reported as evidence of internal coherence, not as independent confirmation of validity.</p>
+<p>The strong negative PQI–risk relationship is the most substantively meaningful result. It confirms that the integrated risk metric consistently declines as perceptual and environmental quality improve, demonstrating that the framework's composite indices behave in a theoretically consistent and non-contradictory manner. Because several risk indicators are constructed partly as inverses of PQI components, this relationship is partly structural by design , it is reported as evidence of internal coherence, not as independent confirmation of validity.</p>
 <h2 id="expert-face-validity-assessment">Expert face validity assessment<a class="headerlink" href="#expert-face-validity-assessment" title="Permanent link">&para;</a></h2>
 <p>Eight planning professionals independently evaluated 20 grid cells randomly sampled from the full Alabama diagnostic dataset. Sampling used a fixed random seed (42) so that all eight experts assessed identical cells, enabling inter-rater reliability analysis.</p>
 <h3 id="design">Design<a class="headerlink" href="#design" title="Permanent link">&para;</a></h3>
 <p>Each expert received a standardised rating package: the sampled cells with their full indicator profiles and model-generated recommendations, written rating instructions defining a five-point Likert scale, category-level guidance for each recommendation type, and a professional qualification form. Experts rated whether each recommendation was appropriate given the diagnostic conditions of its cell:</p>
 <ul>
-<li><strong>1</strong> — Strongly disagree (recommendation inappropriate or misleading)</li>
-<li><strong>2</strong> — Disagree (unlikely to be useful in practice)</li>
-<li><strong>3</strong> — Neutral (plausible but with significant reservations)</li>
-<li><strong>4</strong> — Agree (appropriate given the diagnostic evidence)</li>
-<li><strong>5</strong> — Strongly agree (clearly appropriate and governance-relevant)</li>
+<li><strong>1</strong> , Strongly disagree (recommendation inappropriate or misleading)</li>
+<li><strong>2</strong> , Disagree (unlikely to be useful in practice)</li>
+<li><strong>3</strong> , Neutral (plausible but with significant reservations)</li>
+<li><strong>4</strong> , Agree (appropriate given the diagnostic evidence)</li>
+<li><strong>5</strong> , Strongly agree (clearly appropriate and governance-relevant)</li>
 </ul>
 <p>Experts selecting a neutral rating were asked to document their reservations, enabling qualitative analysis of where and why disagreement arises. Ratings of 4–5 were classified as accepted, 3 as neutral, and 1–2 as rejected.</p>
 <h3 id="overall-acceptance">Overall acceptance<a class="headerlink" href="#overall-acceptance" title="Permanent link">&para;</a></h3>
@@ -822,7 +822,7 @@
 </table>
 <p>This acceptance rate confirms that the framework's recommendation logic is broadly aligned with professional planning judgment.</p>
 <h3 id="category-level-agreement">Category-level agreement<a class="headerlink" href="#category-level-agreement" title="Permanent link">&para;</a></h3>
-<p>Acceptance varied systematically across recommendation categories. Connectivity and active-travel interventions received the highest and most consistent endorsement, particularly in cells with low walkability and high infrastructure deficiency where the diagnostic rationale is clearest. Maintain-and-monitor recommendations showed the greatest variation, with neutral responses concentrated in cells of moderate risk where intervention urgency is genuinely ambiguous. The single integrated recommendation — cell 10, the sample's highest-risk and lowest-quality cell — received unanimous strong agreement from all eight experts (mean = 5.0, SD = 0.0), confirming that where diagnostic evidence is unambiguous, expert consensus follows.</p>
+<p>Acceptance varied systematically across recommendation categories. Connectivity and active-travel interventions received the highest and most consistent endorsement, particularly in cells with low walkability and high infrastructure deficiency where the diagnostic rationale is clearest. Maintain-and-monitor recommendations showed the greatest variation, with neutral responses concentrated in cells of moderate risk where intervention urgency is genuinely ambiguous. The single integrated recommendation , cell 10, the sample's highest-risk and lowest-quality cell , received unanimous strong agreement from all eight experts (mean = 5.0, SD = 0.0), confirming that where diagnostic evidence is unambiguous, expert consensus follows.</p>
 <h3 id="inter-rater-reliability">Inter-rater reliability<a class="headerlink" href="#inter-rater-reliability" title="Permanent link">&para;</a></h3>
 <p>Inter-rater reliability was assessed using Krippendorff's alpha on ordinal ratings across all eight experts:</p>
 <table>
@@ -843,16 +843,16 @@
 </tr>
 </tbody>
 </table>
-<p>These values reflect low but non-trivial agreement, consistent with the inherently context-dependent nature of planning judgment. The reliability figures are reported transparently rather than smoothed over. Critically, disagreement is <strong>systematic rather than random</strong> — it concentrates in two identifiable cell types:</p>
+<p>These values reflect low but non-trivial agreement, consistent with the inherently context-dependent nature of planning judgment. The reliability figures are reported transparently rather than smoothed over. Critically, disagreement is <strong>systematic rather than random</strong> , it concentrates in two identifiable cell types:</p>
 <ol>
 <li><strong>High-greenness, zero-road-density cells</strong>, where experts differ on whether the spatial profile indicates a connectivity deficiency requiring intervention or periurban open space outside the intervention logic.</li>
 <li><strong>Borderline maintain cases</strong>, where combined risk falls close to the intervention threshold and professional judgment is genuinely divided.</li>
 </ol>
-<p>This clustering is analytically important. It identifies precisely the spatial conditions where AI-generated recommendations require the greatest professional scrutiny — which is exactly the governance role the framework is designed to support. The framework structures deliberation in ambiguous cases rather than replacing it. The low inter-rater agreement in these cases is therefore consistent with, not contradictory to, the framework's governance design logic.</p>
+<p>This clustering is analytically important. It identifies precisely the spatial conditions where AI-generated recommendations require the greatest professional scrutiny , which is exactly the governance role the framework is designed to support. The framework structures deliberation in ambiguous cases rather than replacing it. The low inter-rater agreement in these cases is therefore consistent with, not contradictory to, the framework's governance design logic.</p>
 <h2 id="diagnostic-coherence">Diagnostic coherence<a class="headerlink" href="#diagnostic-coherence" title="Permanent link">&para;</a></h2>
 <p>Indicator profiles of expert-reviewed cells grouped by recommendation category confirm that the framework assigns recommendations in ways that are internally coherent and professionally legible. Cells assigned connectivity interventions consistently show high infrastructure deficiency and low walkability; greening-oriented recommendations correspond to high environmental degradation and reduced greenness; maintain-and-monitor cells cluster around intermediate values. This coherence between indicator profiles and recommendation categories demonstrates that a planner encountering any recommendation can locate precisely which indicator is driving it.</p>
 <h2 id="reproducing-the-validation">Reproducing the validation<a class="headerlink" href="#reproducing-the-validation" title="Permanent link">&para;</a></h2>
-<p>The validation materials — the expert rating template, instructions, and scoring code — are provided in the <code>validation/</code> directory and the pipeline notebook. The expert rating sheets are distributed with an empty rating column for professionals to complete; the scoring code computes acceptance rates, category-level agreement, Krippendorff's alpha, and inter-rater Spearman correlations once completed sheets are returned. See <a href="../reproducibility/">Reproducibility</a> for the full procedure.</p>
+<p>The validation materials , the expert rating template, instructions, and scoring code , are provided in the <code>validation/</code> directory and the pipeline notebook. The expert rating sheets are distributed with an empty rating column for professionals to complete; the scoring code computes acceptance rates, category-level agreement, Krippendorff's alpha, and inter-rater Spearman correlations once completed sheets are returned. See <a href="../reproducibility/">Reproducibility</a> for the full procedure.</p>
 
 
 

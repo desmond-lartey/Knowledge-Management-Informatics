@@ -736,7 +736,7 @@
 <tr>
 <td>1</td>
 <td>Discover states with both imagery and buildings</td>
-<td>—</td>
+<td>,</td>
 </tr>
 <tr>
 <td>2</td>
@@ -797,16 +797,16 @@
 </table>
 <h2 id="reproducing-individual-results">Reproducing individual results<a class="headerlink" href="#reproducing-individual-results" title="Permanent link">&para;</a></h2>
 <p>Because intermediate outputs are saved, most results can be reproduced without re-running the whole pipeline.</p>
-<p><strong>Model performance metrics</strong> (IoU, F1, precision, recall, accuracy) — requires <code>best_model.pth</code> and the validation tiles. Run Step 6. The evaluation computes metrics on the same 20% held-out validation split used in training (fixed seed).</p>
-<p><strong>Spatial diagnostics</strong> (PQI, risk, recommendations) — requires the per-state grid GeoJSON from Step 8. Run Step 9 for any state by setting <code>VIS_STATE</code>.</p>
-<p><strong>Correlation matrices</strong> (computational consistency) — requires only the diagnostic CSV <code>AL_urban_grid_results.csv</code>. Run Step 10 or <code>figures/validation_figures.py</code>.</p>
-<p><strong>Sensitivity analysis</strong> — requires only <code>AL_urban_grid_results.csv</code>. Run <code>src/sensitivity.py</code>. No segmentation or aggregation needed.</p>
-<p><strong>Expert validation statistics</strong> — requires the completed expert rating sheets. Place returned sheets in their <code>validation_outputs/Expert_X/</code> folders and run the scoring code, which computes acceptance rates, category-level agreement, Krippendorff's alpha, and inter-rater Spearman correlations.</p>
+<p><strong>Model performance metrics</strong> (IoU, F1, precision, recall, accuracy) , requires <code>best_model.pth</code> and the validation tiles. Run Step 6. The evaluation computes metrics on the same 20% held-out validation split used in training (fixed seed).</p>
+<p><strong>Spatial diagnostics</strong> (PQI, risk, recommendations) , requires the per-state grid GeoJSON from Step 8. Run Step 9 for any state by setting <code>VIS_STATE</code>.</p>
+<p><strong>Correlation matrices</strong> (computational consistency) , requires only the diagnostic CSV <code>AL_urban_grid_results.csv</code>. Run Step 10 or <code>figures/validation_figures.py</code>.</p>
+<p><strong>Sensitivity analysis</strong> , requires only <code>AL_urban_grid_results.csv</code>. Run <code>src/sensitivity.py</code>. No segmentation or aggregation needed.</p>
+<p><strong>Expert validation statistics</strong> , requires the completed expert rating sheets. Place returned sheets in their <code>validation_outputs/Expert_X/</code> folders and run the scoring code, which computes acceptance rates, category-level agreement, Krippendorff's alpha, and inter-rater Spearman correlations.</p>
 <h2 id="data-sources">Data sources<a class="headerlink" href="#data-sources" title="Permanent link">&para;</a></h2>
 <p>The framework uses two public data sources that users must acquire for their own study area:</p>
 <ul>
-<li><strong>NAIP aerial imagery</strong> — US Department of Agriculture, available via Google Earth Engine, USGS EarthExplorer, or the NAIP AWS bucket. One-metre resolution, RGB or RGBN.</li>
-<li><strong>Building footprints</strong> — Google-Microsoft Open Buildings dataset, available via Source Cooperative and Google Earth Engine.</li>
+<li><strong>NAIP aerial imagery</strong> , US Department of Agriculture, available via Google Earth Engine, USGS EarthExplorer, or the NAIP AWS bucket. One-metre resolution, RGB or RGBN.</li>
+<li><strong>Building footprints</strong> , Google-Microsoft Open Buildings dataset, available via Source Cooperative and Google Earth Engine.</li>
 </ul>
 <p>Road networks are retrieved automatically at runtime from OpenStreetMap via OSMnx; no manual download is required.</p>
 <p>A small worked example for a subset of the Alabama study area is provided in <code>data/sample/</code> so that the diagnostic, validation, and sensitivity stages can be run without acquiring the full national datasets.</p>
