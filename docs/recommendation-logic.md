@@ -4,7 +4,7 @@ The recommendation layer translates diagnostic indices into planning guidance. I
 
 ## The decision cascade
 
-The logic is evaluated as an ordered cascade — the first condition that a cell satisfies determines its recommendation. This ordering encodes a governance priority: cells with the most severe combined problems are addressed first with integrated interventions, before the framework considers single-dimension deficiencies.
+The logic is evaluated as an ordered cascade , the first condition that a cell satisfies determines its recommendation. This ordering encodes a governance priority: cells with the most severe combined problems are addressed first with integrated interventions, before the framework considers single-dimension deficiencies.
 
 | Priority | Condition | Recommendation |
 |---|---|---|
@@ -15,21 +15,21 @@ The logic is evaluated as an ordered cascade — the first condition that a cell
 
 ## Rationale for each rule
 
-**Priority 1 — Integrated intervention.** A cell with high combined risk ($CURI \geq 0.6$) and low perceptual quality ($PQI < 0.4$) has multiple intersecting problems: morphological, environmental, and infrastructural deficiencies co-occur. Single-dimension interventions would be insufficient, so the framework recommends an integrated package combining greening, walkability retrofitting, and mixed-use densification. This reflects contemporary planning theory emphasising multifunctional interventions for interconnected challenges.
+**Priority 1 , Integrated intervention.** A cell with high combined risk ($CURI \geq 0.6$) and low perceptual quality ($PQI < 0.4$) has multiple intersecting problems: morphological, environmental, and infrastructural deficiencies co-occur. Single-dimension interventions would be insufficient, so the framework recommends an integrated package combining greening, walkability retrofitting, and mixed-use densification. This reflects contemporary planning theory emphasising multifunctional interventions for interconnected challenges.
 
-**Priority 2 — Connectivity intervention.** A cell whose dominant problem is infrastructure deficiency ($\text{InfraDef} > 0.5$) — low road density combined with low walkability — needs improved network structure. The recommendation targets pedestrian and cycling infrastructure and street connectivity.
+**Priority 2 , Connectivity intervention.** A cell whose dominant problem is infrastructure deficiency ($\text{InfraDef} > 0.5$) , low road density combined with low walkability , needs improved network structure. The recommendation targets pedestrian and cycling infrastructure and street connectivity.
 
-**Priority 3 — Greening intervention.** A cell whose dominant problem is environmental degradation ($\text{EnvDeg} > 0.6$) — low greenness — is matched with nature-based strategies: urban greening and blue-green infrastructure.
+**Priority 3 , Greening intervention.** A cell whose dominant problem is environmental degradation ($\text{EnvDeg} > 0.6$) , low greenness , is matched with nature-based strategies: urban greening and blue-green infrastructure.
 
-**Priority 4 — Maintain and monitor.** A cell that satisfies none of the above conditions is in a stable configuration. It requires only monitoring and incremental management, not active intervention.
+**Priority 4 , Maintain and monitor.** A cell that satisfies none of the above conditions is in a stable configuration. It requires only monitoring and incremental management, not active intervention.
 
 ## Why the cascade order matters
 
-Because conditions are evaluated in priority order, a cell that satisfies both the integrated-intervention condition and the infrastructure-deficiency condition receives the integrated recommendation, not the connectivity one. This prevents the framework from under-prescribing for the most troubled cells. The ordering is a governance judgment encoded in the logic, and — like every threshold — it is disclosed here so that it can be scrutinised and, if a different governance context requires, recalibrated.
+Because conditions are evaluated in priority order, a cell that satisfies both the integrated-intervention condition and the infrastructure-deficiency condition receives the integrated recommendation, not the connectivity one. This prevents the framework from under-prescribing for the most troubled cells. The ordering is a governance judgment encoded in the logic, and , like every threshold , it is disclosed here so that it can be scrutinised and, if a different governance context requires, recalibrated.
 
 ## Threshold calibration and transferability
 
-The specific thresholds (0.6, 0.4, 0.5, 0.6) reflect the design judgment applied to the Alabama demonstration. They are not claimed to be universally optimal. Adapting the framework to a different governance context would involve recalibrating these thresholds in dialogue with local planning institutions and standards. This is a recognised limitation and a direction for future work — the contribution of the framework is the transparent architecture that connects diagnostics to recommendations, not the specific threshold values.
+The specific thresholds (0.6, 0.4, 0.5, 0.6) reflect the design judgment applied to the Alabama demonstration. They are not claimed to be universally optimal. Adapting the framework to a different governance context would involve recalibrating these thresholds in dialogue with local planning institutions and standards. This is a recognised limitation and a direction for future work , the contribution of the framework is the transparent architecture that connects diagnostics to recommendations, not the specific threshold values.
 
 ## Distribution of recommendations in the demonstration
 

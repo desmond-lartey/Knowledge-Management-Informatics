@@ -5,7 +5,7 @@ PQI weighting sensitivity analysis.
 
 Tests whether the spatial diagnostic pattern of the Perceptual Quality Index
 is robust to the choice of indicator weights. Reads directly from the
-diagnostic output CSV — no re-running of segmentation or aggregation needed.
+diagnostic output CSV , no re-running of segmentation or aggregation needed.
 
 Reported result: Spearman rho = 0.856-0.980 across alternative weighting
 schemes relative to baseline (all 3,116 cells, p < 0.001).

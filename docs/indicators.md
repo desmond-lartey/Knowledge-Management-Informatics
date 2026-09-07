@@ -1,6 +1,6 @@
 # Indicators and Composite Indices
 
-This page discloses every formula used in the framework. Each indicator is computed per grid cell $i$. The framework operates on **three primary measurements** — building coverage, vegetation coverage, and road density — from which five perceptual indicators and two composite indices are derived. This structure is deliberate: the five indicators make three measurements interpretable in planning-relevant terms, rather than representing five independent constructs.
+This page discloses every formula used in the framework. Each indicator is computed per grid cell $i$. The framework operates on **three primary measurements** , building coverage, vegetation coverage, and road density , from which five perceptual indicators and two composite indices are derived. This structure is deliberate: the five indicators make three measurements interpretable in planning-relevant terms, rather than representing five independent constructs.
 
 ## Primary measurements
 
@@ -42,31 +42,31 @@ The five perceptual indicators are morphological proxies. Each is derived from t
 
 $$G_i = \widetilde{VC}_i$$
 
-Greenness is the normalised vegetation coverage — a proxy for the environmental greenness conditions the perception literature associates with urban quality.
+Greenness is the normalised vegetation coverage , a proxy for the environmental greenness conditions the perception literature associates with urban quality.
 
 ### Openness
 
 $$O_i = 1 - BC_i$$
 
-Openness is inverse building coverage — a morphological proxy for visual permeability and freedom from built-form obstruction.
+Openness is inverse building coverage , a morphological proxy for visual permeability and freedom from built-form obstruction.
 
 ### Enclosure
 
 $$E_i = BC_i$$
 
-Enclosure is building coverage — a proxy for the degree to which space is bounded by structures.
+Enclosure is building coverage , a proxy for the degree to which space is bounded by structures.
 
 ### Walkability
 
 $$W_i = \widetilde{RD}_i \times (1 - \widetilde{E}_i)$$
 
-Walkability combines normalised road density with inverse normalised enclosure — a network- and morphology-based proxy for how the spatial form supports pedestrian movement.
+Walkability combines normalised road density with inverse normalised enclosure , a network- and morphology-based proxy for how the spatial form supports pedestrian movement.
 
 ### Imageability
 
 $$Im_i = \widetilde{\sqrt{BC_i}}$$
 
-Imageability is the normalised square root of building coverage — a proxy for the built intensity and spatial presence that create morphological distinctiveness.
+Imageability is the normalised square root of building coverage , a proxy for the built intensity and spatial presence that create morphological distinctiveness.
 
 ## Perceptual Quality Index (PQI)
 
@@ -117,7 +117,7 @@ Because several indicators are algebraic transformations of a small number of un
 | Walkability | $W$ | $RD$, $E$ | $\widetilde{RD} \times (1 - \widetilde{E})$ |
 | Imageability | $Im$ | $BC$ | $\widetilde{\sqrt{BC}}$ |
 | Perceptual Quality Index | $PQI$ | All perceptual | Weighted aggregation |
-| Sprawl | — | $PQI$ | $1 - PQI$ |
-| Environmental degradation | — | $G$ | $1 - G$ |
-| Infrastructure deficiency | — | $RD$, $W$ | $(1-\widetilde{RD})(1-W)$ |
+| Sprawl | , | $PQI$ | $1 - PQI$ |
+| Environmental degradation | , | $G$ | $1 - G$ |
+| Infrastructure deficiency | , | $RD$, $W$ | $(1-\widetilde{RD})(1-W)$ |
 | Combined Urban Risk Index | $CURI$ | All risk | Weighted aggregation |

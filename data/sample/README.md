@@ -4,7 +4,7 @@ This directory holds a small worked example so the diagnostic, validation,
 and sensitivity stages can be run without acquiring the full national datasets.
 
 Place here:
-- `AL_urban_grid_results_sample.csv` — a subset of the Alabama diagnostic
+- `AL_urban_grid_results_sample.csv` , a subset of the Alabama diagnostic
   output (indicator columns + recommendations), sufficient to run:
   - `src/sensitivity.py`
   - `src/recommendations.py`

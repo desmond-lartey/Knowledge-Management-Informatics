@@ -3,8 +3,8 @@ indicators.py
 =============
 Perceptual indicators and composite indices (paper Stage 4).
 
-The framework operates on three primary measurements — building coverage,
-vegetation coverage, road density — from which five perceptual indicators and
+The framework operates on three primary measurements , building coverage,
+vegetation coverage, road density , from which five perceptual indicators and
 two composite indices are derived. Every formula here corresponds exactly to
 an equation in the paper and the docs/indicators.md page.
 
@@ -56,7 +56,7 @@ def compute_perceptual_indicators(grid):
 
 def compute_pqi(grid, weights=(0.25, 0.20, 0.20, 0.20, 0.15)):
     """
-    Perceptual Quality Index — weighted linear combination of the five
+    Perceptual Quality Index , weighted linear combination of the five
     perceptual indicators.
 
     Default weights (greenness, openness, enclosure-inverse, walkability,

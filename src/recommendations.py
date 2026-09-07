@@ -8,7 +8,7 @@ across four intervention categories using an ordered decision cascade.
 
 Every threshold is disclosed. Because the logic is rule-based rather than
 learned, any recommendation can be traced to the exact indicator condition
-that produced it — the mechanism through which the framework supports
+that produced it , the mechanism through which the framework supports
 transparency and accountability (see docs/recommendation-logic.md).
 """
 
@@ -26,7 +26,7 @@ def recommend(row):
     """
     Assign a planning recommendation to a single grid cell.
 
-    Decision cascade — first satisfied condition wins:
+    Decision cascade , first satisfied condition wins:
       1. High combined risk (>=0.6) AND low PQI (<0.4)  -> integrated
       2. Infrastructure deficiency (>0.5)               -> connectivity
       3. Environmental degradation (>0.6)               -> greening

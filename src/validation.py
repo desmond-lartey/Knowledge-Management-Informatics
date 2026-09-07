@@ -4,10 +4,10 @@ validation.py
 Expert validation pack generation and scoring.
 
 Two operations:
-  1. build_expert_packs — generate rating sheets, instructions, and
+  1. build_expert_packs , generate rating sheets, instructions, and
      qualification forms for N experts, sampling identical cells (fixed seed)
      so inter-rater reliability can be computed.
-  2. score_validation — compute acceptance rates, category-level agreement,
+  2. score_validation , compute acceptance rates, category-level agreement,
      Krippendorff's alpha, and inter-rater Spearman correlations from
      completed rating sheets.
 

@@ -37,7 +37,7 @@ The notebook `notebooks/GeoAI_Urban_Planner_Pipeline.ipynb` is organised into tw
 | Step | Action | Skip if |
 |---|---|---|
 | 0 | Install packages, mount Drive | Drive already mounted |
-| 1 | Discover states with both imagery and buildings | — |
+| 1 | Discover states with both imagery and buildings | , |
 | 2 | Set up training tile folders | Folders exist |
 | 3 | Generate 512×512 training tiles (stride 256) | Tiles exist in Drive |
 | 4 | Merge per-state tiles into global training set | Merged folders exist |
@@ -54,22 +54,22 @@ The notebook `notebooks/GeoAI_Urban_Planner_Pipeline.ipynb` is organised into tw
 
 Because intermediate outputs are saved, most results can be reproduced without re-running the whole pipeline.
 
-**Model performance metrics** (IoU, F1, precision, recall, accuracy) — requires `best_model.pth` and the validation tiles. Run Step 6. The evaluation computes metrics on the same 20% held-out validation split used in training (fixed seed).
+**Model performance metrics** (IoU, F1, precision, recall, accuracy) , requires `best_model.pth` and the validation tiles. Run Step 6. The evaluation computes metrics on the same 20% held-out validation split used in training (fixed seed).
 
-**Spatial diagnostics** (PQI, risk, recommendations) — requires the per-state grid GeoJSON from Step 8. Run Step 9 for any state by setting `VIS_STATE`.
+**Spatial diagnostics** (PQI, risk, recommendations) , requires the per-state grid GeoJSON from Step 8. Run Step 9 for any state by setting `VIS_STATE`.
 
-**Correlation matrices** (computational consistency) — requires only the diagnostic CSV `AL_urban_grid_results.csv`. Run Step 10 or `figures/validation_figures.py`.
+**Correlation matrices** (computational consistency) , requires only the diagnostic CSV `AL_urban_grid_results.csv`. Run Step 10 or `figures/validation_figures.py`.
 
-**Sensitivity analysis** — requires only `AL_urban_grid_results.csv`. Run `src/sensitivity.py`. No segmentation or aggregation needed.
+**Sensitivity analysis** , requires only `AL_urban_grid_results.csv`. Run `src/sensitivity.py`. No segmentation or aggregation needed.
 
-**Expert validation statistics** — requires the completed expert rating sheets. Place returned sheets in their `validation_outputs/Expert_X/` folders and run the scoring code, which computes acceptance rates, category-level agreement, Krippendorff's alpha, and inter-rater Spearman correlations.
+**Expert validation statistics** , requires the completed expert rating sheets. Place returned sheets in their `validation_outputs/Expert_X/` folders and run the scoring code, which computes acceptance rates, category-level agreement, Krippendorff's alpha, and inter-rater Spearman correlations.
 
 ## Data sources
 
 The framework uses two public data sources that users must acquire for their own study area:
 
-- **NAIP aerial imagery** — US Department of Agriculture, available via Google Earth Engine, USGS EarthExplorer, or the NAIP AWS bucket. One-metre resolution, RGB or RGBN.
-- **Building footprints** — Google-Microsoft Open Buildings dataset, available via Source Cooperative and Google Earth Engine.
+- **NAIP aerial imagery** , US Department of Agriculture, available via Google Earth Engine, USGS EarthExplorer, or the NAIP AWS bucket. One-metre resolution, RGB or RGBN.
+- **Building footprints** , Google-Microsoft Open Buildings dataset, available via Source Cooperative and Google Earth Engine.
 
 Road networks are retrieved automatically at runtime from OpenStreetMap via OSMnx; no manual download is required.
 

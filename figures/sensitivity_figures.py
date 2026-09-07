@@ -5,7 +5,7 @@ PQI weighting sensitivity scatter plots.
 
 Produces one scatter figure per alternative weighting scheme, showing
 rank-order stability against the baseline PQI. Reads directly from the
-diagnostic CSV — no dependency on other pipeline stages.
+diagnostic CSV , no dependency on other pipeline stages.
 """
 
 import os
