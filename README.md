@@ -10,6 +10,8 @@
   <img src="https://visitor-badge.laobi.icu/badge?page_id=desmond-lartey.Knowledge-Management-Informatics" alt="Visitors">
 </p>
 
+Other companion published articles within this research is stored in this repository: [Mapping-AI literature-discourse](https://github.com/desmond-lartey/Knowledge-Management-Informatics)
+
 This repository contains the complete, reproducible pipeline for the study *"GeoAI to Planning Intelligence: A Spatial Decision-Support Framework for Urban Governance"* by Desmond Lartey and Kris M.Y. Law. It translates high-resolution aerial imagery into interpretable spatial diagnostics and planning recommendations that align with professional governance judgment.
 
 The framework moves GeoAI beyond pixel-level classification toward governance-relevant decision support by integrating five stages into a single pipeline: semantic segmentation of the built environment, grid-based spatial aggregation, perceptual and functional indicator computation, composite index construction, and rule-based recommendation generation. Every stage is auditable, every indicator is disclosed, and every recommendation can be traced from input to output.
