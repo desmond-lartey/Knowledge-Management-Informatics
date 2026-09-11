@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A6FA8"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+    <radialGradient id="node" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#C8E6F0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- rounded background -->
+  <rect x="0" y="0" width="64" height="64" rx="14" ry="14" fill="url(#bg)"/>
+
+  <!-- network edges -->
+  <g stroke="#8FD4E8" stroke-width="1.8" opacity="0.85" stroke-linecap="round">
+    <line x1="32" y1="14" x2="16" y2="30"/>
+    <line x1="32" y1="14" x2="48" y2="30"/>
+    <line x1="16" y1="30" x2="32" y2="46"/>
+    <line x1="48" y1="30" x2="32" y2="46"/>
+    <line x1="16" y1="30" x2="48" y2="30"/>
+    <line x1="32" y1="14" x2="32" y2="46"/>
+    <line x1="32" y1="46" x2="20" y2="52"/>
+    <line x1="32" y1="46" x2="44" y2="52"/>
+  </g>
+
+  <!-- network nodes -->
+  <g fill="url(#node)" stroke="#0A6FA8" stroke-width="1">
+    <circle cx="32" cy="14" r="5.5"/>
+    <circle cx="16" cy="30" r="5"/>
+    <circle cx="48" cy="30" r="5"/>
+    <circle cx="32" cy="46" r="6"/>
+    <circle cx="20" cy="52" r="3.6"/>
+    <circle cx="44" cy="52" r="3.6"/>
+  </g>
+
+  <!-- central accent node -->
+  <circle cx="32" cy="46" r="2.6" fill="#F0A500"/>
+</svg>
