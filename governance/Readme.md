@@ -65,3 +65,4 @@ A daily log of short reflections (auto-generated, 6:00 AM CEST).
 - **2026-09-13**: AI systems help match resources to areas of greatest need.
 - **2026-09-14**: Natural language AI drafts policy summaries for quick review.
 - **2026-09-15**: AI-powered scenario planning strengthens strategic governance.
+- **2026-09-16**: AI helps detect corruption risks in procurement processes.
