@@ -121,3 +121,4 @@ A daily log of short reflections (auto-generated, 6:00 AM CEST).
 - **2026-11-08**: Machine learning improves accuracy of public health forecasts.
 - **2026-11-09**: AI systems help track progress toward sustainable development.
 - **2026-11-10**: Governance AI can personalize public services at scale.
+- **2026-11-11**: AI strengthens accountability by logging every decision step.
